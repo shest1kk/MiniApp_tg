@@ -5,9 +5,12 @@ import Button from "../../Buttons/Button";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 
+const closingBehavior = () => {
+    tg.web_app_setup_closing_behavior
+}
+
 const StartPage = () => {
     const { user } = useTelegram();
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
     return (
         <div className="startPage">
@@ -22,11 +25,11 @@ const StartPage = () => {
                 <div className="startPage-username"><b>Привет, {user?.first_name}!</b></div>
                 <div className="startPage-description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
     
-                    <Link to="/sections">
-                        <Button className="primary-button">
+                    {/* <Link to="/sections"> */}
+                        <Button className="primary-button" onclick={closingBehavior}>
                             Перейти к разделам
                         </Button>
-                    </Link>
+                    {/* </Link> */}
   
             </div>
         </div>
