@@ -21,13 +21,13 @@ const StartPage = () => {
             <div className="startPage-wrapper">
                 <div className="startPage-username"><b>Привет, {user?.first_name}!</b></div>
                 <div className="startPage-description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
-                {isMobile && 
+    
                     <Link to="/sections">
                         <Button className="primary-button">
                             Перейти к разделам
                         </Button>
                     </Link>
-                }
+  
             </div>
         </div>
     );
