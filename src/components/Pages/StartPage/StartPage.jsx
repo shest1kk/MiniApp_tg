@@ -3,6 +3,7 @@ import './StartPage.css';
 import { useTelegram } from "../../../hooks/useTelegram";
 import Button from "../../Buttons/Button";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 
 const StartPage = () => {
     const { user, tg } = useTelegram();
@@ -13,7 +14,9 @@ const StartPage = () => {
         });
 
         const handleMainButtonClick = () => {
-            tg.web_app_setup_closing_behavior();
+            tg.web_app_setup_closing_behavior({
+                need_confirmation: true
+            });
         };
 
         tg.MainButton.onClick(handleMainButtonClick);
@@ -39,7 +42,7 @@ const StartPage = () => {
                 <div className="startPage-description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
     
                 {/* <Link to="/sections"> */}
-                    <Button className="primary-button" onClick={() => tg.web_app_setup_closing_behavior()}>
+                    <Button className="primary-button" onClick={() => tg.web_app_setup_closing_behavior({ need_confirmation: true })}>
                         Перейти к разделам
                     </Button>
                 {/* </Link> */}
