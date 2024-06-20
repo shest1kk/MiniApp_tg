@@ -5,11 +5,17 @@
     justify-content: center;
 }
 
+.FaqAbout_image {
+    width: 80vw;
+    margin-bottom: 20px;
+}
+
 .FaqAbout_image_img {
     height: 50vh;
-    width: 80vh;
+    width: 100%;
 }
 
 .FaqAbout_text {
     text-align: justify;
+    margin-bottom: 20px;
 }
