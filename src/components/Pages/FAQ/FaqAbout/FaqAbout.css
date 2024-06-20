@@ -1,0 +1,9 @@
+.FaqAbout_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FaqAbout_image_img {
+    height: 50vh;
+}
