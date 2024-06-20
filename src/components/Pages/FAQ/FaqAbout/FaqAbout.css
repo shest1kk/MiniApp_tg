@@ -16,6 +16,7 @@
 }
 
 .FaqAbout_text {
+    color: var(--tg-theme-text-color);
     text-align: justify;
     margin-bottom: 20px;
 }
