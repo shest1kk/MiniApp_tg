@@ -9,23 +9,8 @@ const StartPage = () => {
     const { user, tg } = useTelegram();
 
     useEffect(() => {
-        tg.MainButton.setParams({
-            text: "Тест"
-        });
 
-        const handleMainButtonClick = () => {
-            tg.web_app_setup_closing_behavior({
-                need_confirmation: true
-            });
-        };
-
-        tg.MainButton.onClick(handleMainButtonClick);
-        tg.MainButton.show();
-
-        return () => {
-            tg.MainButton.offClick(handleMainButtonClick);
-            tg.MainButton.hide();
-        };
+        return () => {};
     }, [tg]);
 
     return (

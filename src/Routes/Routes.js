@@ -2,13 +2,13 @@ import StartPage from '../components/Pages/StartPage/StartPage';
 import AllSection from '../components/Pages/AllSection/AllSection';
 
 
+import Feedback from '../components/Pages/Feedback/Feedback';
+
 import Meetup from '../components/Pages/Meetup/Meetup';
 import MeetupConception from '../components/Pages/Meetup/MeetupConception/MeetupConception';
 import MeetupDiscussion from '../components/Pages/Meetup/MeetupDiscussion/MeetupDiscussion';
 import MeetupSpeakers from '../components/Pages/Meetup/MeetupSpeakers/MeetupSpeakers';
 import MeetupTiming from '../components/Pages/Meetup/MeetupTiming/MeetupTiming';
-
-import Feedback from '../components/Pages/Feedback/Feedback';
 
 import FAQ from '../components/Pages/FAQ/FAQ';
 import FaqAbout from '../components/Pages/FAQ/FaqAbout/FaqAbout';

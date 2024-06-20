@@ -2,6 +2,7 @@ import React from "react";
 import './FaqLiving.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
+
 const FaqLiving = () => {
     return (
         <div className={'FaqLiving_wrapper'}>
