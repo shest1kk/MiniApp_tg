@@ -9,9 +9,18 @@ const Meetup = () => {
             <span>Конференция</span>
             </div>
         <div className={'Meetup_categories'}>
+            <Link to='conception'>
             <Button className={'primary-button'}>Концепция</Button>
+            </Link>
+            <Link to='speakers'>
             <Button className={'primary-button'}>Спикеры</Button>
+            </Link>
+            <Link to='discussion'>
             <Button className={'primary-button'}>Панельная дискуссия</Button>
+            </Link>
+            <Link to='timing'>
+            <Button className={'primary-button'}>Тайминги</Button>
+            </Link>
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

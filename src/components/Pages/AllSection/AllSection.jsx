@@ -9,16 +9,16 @@ const AllSection = () => {
             <span>Выбери раздел</span>
             </div>
             <div className={'categories_button'}>
-            <Link to="/FAQ">
+            <Link to="/faq">
             <Button className={'primary-button'}>Общая информация</Button>
             </Link>
-            <Link to='/GalaDinner'>
+            <Link to='/galadinner'>
             <Button className={'primary-button'}>Гала-ужин</Button>
             </Link>
-            <Link to='/Meetup'>
+            <Link to='/meetup'>
             <Button className={'primary-button'}>Конференция</Button>
             </Link>
-            <Link to='/Feedback'>
+            <Link to='/feedback'>
             <Button className={'primary-button'}>Обратная связь</Button>
             </Link>
         

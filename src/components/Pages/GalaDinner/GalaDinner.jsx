@@ -9,10 +9,15 @@ const GalaDinner = () => {
             <span>Гала-ужин</span>
         </div>
         <div className={'GalaDinner_categories'}>
-            
+            <Link to="conception">
             <Button className={'primary-button'}>Концепция</Button>
+            </Link>
+            <Link to='dresscode'>
             <Button className={'primary-button'}>Дресскод</Button>
+            </Link>
+            <Link to='timing'>
             <Button className={'primary-button'}>Тайминги</Button>
+            </Link>
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

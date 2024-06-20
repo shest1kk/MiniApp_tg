@@ -9,11 +9,15 @@ const FAQ = () => {
             <span>Общая информация</span>
             </div>
         <div className={'FAQ_categories'}>
-            <Link to='/faqabout'>
+            <Link to='about'>
             <Button className={'primary-button'}>Что входит</Button>
             </Link>
+            <Link to='map'>
             <Button className={'primary-button'}>Карта</Button>
+            </Link>
+            <Link to='living'>
             <Button className={'primary-button'}>Проживание</Button>
+            </Link>
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>
