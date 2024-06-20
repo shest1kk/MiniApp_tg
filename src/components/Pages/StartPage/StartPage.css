@@ -6,37 +6,37 @@ html, body {
 }
 
 .startPage {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100vh; */
     background-color: #0f0f0f;
     /* background-image: url('../../../assets/background-main.jpg'); */
-    background-size: cover;
+    /* background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 20px;
+    padding: 20px; */
 }
 
 .startPage-wrapper {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 5vh;
+    height: 5vh; */
 }
 
 .startPage-logo-img {
-    margin-bottom: 250px;
+    /* margin-bottom: 250px;
     height: 500px;
-    width: 500px;
+    width: 500px; */
 }
 
 .startPage-username {
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .startPage-username,
@@ -49,11 +49,11 @@ html, body {
 }
 
 .startPage-description {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
 }
 
-.primary-button {
+.button-primary-button {
     padding: 10px 15px;
     background: #ffffff;
     color: #000000;
@@ -69,7 +69,7 @@ html, body {
 
 /* Адаптивные стили для маленьких экранов */
 @media (max-width: 768px) {
-    .startPage {
+    /* .startPage {
         padding: 10px;
     }
     
@@ -87,5 +87,5 @@ html, body {
     .primary-button {
         padding: 8px 16px;
         font-size: 14px;
-    }
+    } */
 }

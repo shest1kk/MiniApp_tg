@@ -41,11 +41,11 @@ const StartPage = () => {
                 <div className="startPage-username"><b>Привет, {user?.first_name}!</b></div>
                 <div className="startPage-description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
     
-                {/* <Link to="/sections"> */}
-                    <Button className="primary-button" onClick={() => tg.web_app_setup_closing_behavior({ need_confirmation: true })}>
+                <Link to="/sections">
+                    <Button className={'primary-button'}>
                         Перейти к разделам
                     </Button>
-                {/* </Link> */}
+                </Link>
             </div>
         </div>
     );

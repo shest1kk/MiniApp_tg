@@ -5,5 +5,8 @@
 }
 
 .App {
-  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
 }
