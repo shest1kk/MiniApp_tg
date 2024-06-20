@@ -6,4 +6,9 @@
 
 .FaqAbout_image_img {
     height: 50vh;
+    width: 80vh;
+}
+
+.FaqAbout_text {
+    text-align: justify;
 }
