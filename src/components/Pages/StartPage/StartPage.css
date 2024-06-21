@@ -12,7 +12,7 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100vh; */
-    background-color: #0f0f0f;
+    background-color: var(--tg-theme-bg-color);
     /* background-image: url('../../../assets/background-main.jpg'); */
     /* background-size: cover;
     background-position: center;
@@ -20,38 +20,15 @@ html, body {
     padding: 20px; */
 }
 
-.startPage-wrapper {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 5vh; */
-}
-
-.startPage-logo-img {
-    /* margin-bottom: 250px;
-    height: 500px;
-    width: 500px; */
-}
-
-.startPage-username {
-    /* margin-top: 10px; */
-}
-
-.startPage-username,
-.startPage-description {
+.StartPage_username,
+.StartPage_description {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #fff;
+    color: var(--tg-theme-text-color);
     font-size: 18px;
 }
 
-.startPage-description {
-    /* margin-top: 15px;
-    margin-bottom: 15px; */
-}
 
 .button-primary-button {
     padding: 10px 15px;
@@ -88,4 +65,38 @@ html, body {
         padding: 8px 16px;
         font-size: 14px;
     } */
+}
+
+.StartPage_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.StartPage_image {
+    width: 80vw;
+    margin-bottom: 15px;
+}
+
+.StartPage_image_img {
+    height: 50vh;
+    width: 100%;
+}
+
+.StartPage_text_wrapper {
+    color: var(--tg-theme-text-color);
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.StartPage_wrapper button {
+    margin-top: 10px;
+}
+
+.StartPage_description {
+    margin-top: 5px;
 }

@@ -3,7 +3,6 @@ import './StartPage.css';
 import { useTelegram } from "../../../hooks/useTelegram";
 import Button from "../../Buttons/Button";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from 'react-responsive';
 
 const StartPage = () => {
     const { user, tg } = useTelegram();
@@ -14,17 +13,17 @@ const StartPage = () => {
     }, [tg]);
 
     return (
-        <div className="startPage">
-            <div className="startPage-logo">
+        <div className="StartPage_wrapper">
+            <div className="StartPage_image">
                 <img 
-                    className="startPage-logo-img"
+                    className="StartPage_image_img"
                     src={require('../../../assets/logo.png')}
                     alt="Логотип ЭйКей"
                 />
             </div>
-            <div className="startPage-wrapper">
-                <div className="startPage-username"><b>Привет, {user?.first_name}!</b></div>
-                <div className="startPage-description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
+            <div className="StartPage_text_wrapper">
+                <div className="StartPage_username"><b>Привет, {user?.first_name}!</b></div>
+                <div className="StartPage_description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
     
                 <Link to="/sections">
                     <Button className={'primary-button'}>
