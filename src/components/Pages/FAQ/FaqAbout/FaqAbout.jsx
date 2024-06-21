@@ -2,6 +2,7 @@
     import './FaqAbout.css';
     import Button from '../../../Buttons/Button';
     import { Link } from "react-router-dom";
+    import backgroundMainImage from '../../../../assets/background-main.jpg';
 
 
     const FaqAbout = () => {
@@ -9,7 +10,7 @@
             <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
             <img className={'FaqAbout_image_img'}
-                src={require('../../../../assets/background-main.jpg')}
+                src={backgroundMainImage}
                 alt="123"
                     />
             </div>

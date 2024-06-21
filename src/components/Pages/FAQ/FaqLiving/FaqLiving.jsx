@@ -2,13 +2,14 @@ import React from "react";
 import './FaqLiving.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
+import Image from '../../../../assets/3.jpg';
 
 const FaqLiving = () => {
     return (
         <div className={'FaqLiving_wrapper'}>
         <div className={'FaqLiving_image'}>
         <img className={'FaqLiving_image_img'}
-            src={require('../../../../assets/3.jpg')}
+            src={Image}
             alt="123"
                 />
         </div>

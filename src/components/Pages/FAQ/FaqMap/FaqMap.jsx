@@ -2,12 +2,14 @@ import React from "react";
 import './FaqMap.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
+import Image from '../../../../assets/2.jpg';
+
 const FaqMap = () => {
     return (
         <div className={'FaqMap_wrapper'}>
         <div className={'FaqMap_image'}>
         <img className={'FaqMap_image_img'}
-            src={require('../../../../assets/2.jpg')}
+            src={Image}
             alt="123"
                 />
         </div>
