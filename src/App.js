@@ -2,7 +2,6 @@ import './App.css';
 import { useTelegram } from './hooks/useTelegram';
 import { useEffect } from 'react';
 
-
 function App() {
 
   const {tg} = useTelegram();
