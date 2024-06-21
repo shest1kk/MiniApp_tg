@@ -1,7 +1,6 @@
 import StartPage from '../components/Pages/StartPage/StartPage';
 import AllSection from '../components/Pages/AllSection/AllSection';
 
-
 import Feedback from '../components/Pages/Feedback/Feedback';
 
 import Meetup from '../components/Pages/Meetup/Meetup';
@@ -20,36 +19,39 @@ import GalaDinnerConception from '../components/Pages/GalaDinner/GalaDinnerConce
 import GalaDinnerDresscode from '../components/Pages/GalaDinner/GalaDinnerDresscode/GalaDinnerDresscode';
 import GalaDinnerTiming from '../components/Pages/GalaDinner/GalaDinnerTiming/GalaDinnerTiming';
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <>
+            <Route index element={<StartPage />} />
+            <Route path={'sections'} element={<AllSection />} />
+            
+            <Route path={'faq'} element={<FAQ />} />
+            <Route path={'faq/about'} element={<FaqAbout />} loader={FaqAboutLoader} />
+            <Route path={'faq/map'} element={<FaqMap />} />
+            <Route path={'faq/living'} element={<FaqLiving />} /> 
+
+            <Route path={'galadinner'} element={<GalaDinner />} />
+            <Route path={'galadinner/conception'} element={<GalaDinnerConception />} /> 
+            <Route path={'galadinner/dresscode'} element={<GalaDinnerDresscode />} /> 
+            <Route path={'galadinner/timing'} element={<GalaDinnerTiming />} /> 
+            
+            <Route path={'meetup'} element={<Meetup />} />
+            <Route path={'meetup/conception'} element={<MeetupConception />} />
+            <Route path={'meetup/discussion'} element={<MeetupDiscussion />} />
+            <Route path={'meetup/speakers'} element={<MeetupSpeakers />} />
+            <Route path={'meetup/timing'} element={<MeetupTiming />} />
+
+            <Route path={'feedback'} element={<Feedback />} />
+        </>
+    )
+);
 
 const AppRoutes = () => {
-        return (
-<Routes>
-        <Route index element={<StartPage />}/>
-        <Route path={'sections'} element={<AllSection />}/>
-        
-        <Route path={'faq'} element={<FAQ />} />
-        <Route path={'faq/about'} element={<FaqAbout />} />
-        <Route path={'faq/map'} element={<FaqMap />} />
-        <Route path={'faq/living'} element={<FaqLiving />} /> 
-
-        <Route path={'galadinner'} element={<GalaDinner />} />
-        <Route path={'galadinner/conception'} element={<GalaDinnerConception />} /> 
-        <Route path={'galadinner/dresscode'} element={<GalaDinnerDresscode />} /> 
-        <Route path={'galadinner/timing'} element={<GalaDinnerTiming />} /> 
-        
-
-        <Route path={'meetup'} element={<Meetup />} />
-        <Route path={'meetup/conception'} element={<MeetupConception />} />
-        <Route path={'meetup/discussion'} element={<MeetupDiscussion />} />
-        <Route path={'meetup/speakers'} element={<MeetupSpeakers />} />
-        <Route path={'meetup/timing'} element={<MeetupTiming />} />
-
-        <Route path={'feedback'} element={<Feedback />} />
-        
-        
-</Routes>
-        )
+    return (
+        <RouterProvider router={router} />
+    );
 }
 
 export default AppRoutes;
