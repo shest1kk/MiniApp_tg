@@ -1,0 +1,20 @@
+.categories_text {
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 30px;
+    color: var(--tg-theme-text-color);
+    margin-bottom: 20px;
+}
+
+.categories_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-primary-button {
+    margin-top: 20px;
+}
