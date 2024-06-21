@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 const Meetup = () => {
     return (
         <div className={'Meetup_wrapper'}>
+            <div className={'Meetup_image'}>
+        <img className={'Meetup_image_img'}
+            src={require('../../../assets/8.jpg')}
+            alt="123"
+                />
+        </div>
         <div className={'Meetup_text'}>
             <span>Конференция</span>
             </div>

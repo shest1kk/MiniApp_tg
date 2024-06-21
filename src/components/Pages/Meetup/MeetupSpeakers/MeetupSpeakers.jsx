@@ -7,8 +7,14 @@ const MeetupSpeakers = () => {
     return (
         <div className={'MeetupSpeakers_wrapper'}>
         <div className={'MeetupSpeakers_image'}>
+        <img className={'MeetupSpeakers_image_img'}
+            src={require('../../../../assets/10.jpg')}
+            alt="123"
+                />
         </div>
-        <div className={'MeetupSpeakers_text'}>
+        <div className={'MeetupSpeakers_text'}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
+            Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
         </div>
             <div className={'MeetupSpeakers-button'}>
             <Link to='/meetup'>

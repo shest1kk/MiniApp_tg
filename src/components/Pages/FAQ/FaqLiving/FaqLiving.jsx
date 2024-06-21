@@ -7,8 +7,14 @@ const FaqLiving = () => {
     return (
         <div className={'FaqLiving_wrapper'}>
         <div className={'FaqLiving_image'}>
+        <img className={'FaqLiving_image_img'}
+            src={require('../../../../assets/3.jpg')}
+            alt="123"
+                />
         </div>
-        <div className={'FaqLiving_text'}>
+        <div className={'FaqLiving_text'}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
+            Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
         </div>
             <div className={'FaqLiving-button'}>
             <Link to='/faq'>

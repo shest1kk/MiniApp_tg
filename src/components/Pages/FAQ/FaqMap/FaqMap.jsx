@@ -6,8 +6,14 @@ const FaqMap = () => {
     return (
         <div className={'FaqMap_wrapper'}>
         <div className={'FaqMap_image'}>
+        <img className={'FaqMap_image_img'}
+            src={require('../../../../assets/2.jpg')}
+            alt="123"
+                />
         </div>
-        <div className={'FaqMap_text'}>
+        <div className={'FaqMap_text'}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
+            Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
         </div>
             <div className={'FaqMap-button'}>
             <Link to='/faq'>

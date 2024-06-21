@@ -6,8 +6,14 @@ const GalaDinnerTiming = () => {
     return (
         <div className={'GalaDinnerTiming_wrapper'}>
         <div className={'GalaDinnerTiming_image'}>
+        <img className={'GalaDinnerTiming_image_img'}
+            src={require('../../../../assets/7.jpg')}
+            alt="123"
+                />
         </div>
-        <div className={'GalaDinnerTiming_text'}>
+        <div className={'GalaDinnerTiming_text'}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
+            Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
         </div>
             <div className={'GalaDinnerTiming-button'}>
             <Link to='/galadinner'>
