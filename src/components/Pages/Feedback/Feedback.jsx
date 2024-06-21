@@ -29,7 +29,7 @@ const Feedback = () => {
       <div className={'Feedback_text'}>
         <span>Обратная связь</span>
       </div>
-      <div className={'Meetup_categories'}>
+      <div className={'Feedback_categories'}>
         <a target='_blank' href="https://t.me/feyhoa779">
           <Button className={'primary-button'}>Телеграм</Button>
         </a>
