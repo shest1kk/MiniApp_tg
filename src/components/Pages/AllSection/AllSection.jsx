@@ -4,7 +4,7 @@ import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
 const AllSection = () => {
     return (
-        <div classname={'categories_wrapper'}>
+        <div className={'categories_wrapper'}>
         <div className={'categories_text'}>
             <span>Выбери раздел</span>
             </div>
