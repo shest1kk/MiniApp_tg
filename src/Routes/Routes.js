@@ -22,10 +22,6 @@ import GalaDinnerTiming from '../components/Pages/GalaDinner/GalaDinnerTiming/Ga
 
 import { Route, Routes } from 'react-router-dom';
 
-
-
-
-
 const AppRoutes = () => {
         return (
 <Routes>

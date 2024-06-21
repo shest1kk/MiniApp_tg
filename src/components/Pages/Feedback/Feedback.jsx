@@ -23,13 +23,16 @@ const Feedback = () => {
         <span>Обратная связь</span>
       </div>
       <div className={'Feedback_categories'}>
-      <a target='_blank' href="https://t.me/feyhoa779">
+      {/* <a target='_blank' href="https://t.me/feyhoa779">
           <Button className={'primary-button'}>Телеграм</Button>
         </a>
         <a href="https://wa.me/79969184707">
           <Button className={'primary-button'}>WhatsApp</Button>
         </a>
-        <Button className={'primary-button'} onClick={handleCopyText}>Телефон</Button>
+        <Button className={'primary-button'} onClick={handleCopyText}>Телефон</Button> */}
+        <a href="https://forms.yandex.ru/cloud/66754735eb61465b7d472f3f/">
+          <Button className={'primary-button'}>Оставить отзыв</Button>
+        </a>
         <Link to='/sections'>
           <Button className={'primary-button'}>Назад</Button>
         </Link>
