@@ -1,16 +1,15 @@
     import React from "react";
     import './FaqAbout.css';
     import Button from '../../../Buttons/Button';
-    import { Link, useLoaderData } from "react-router-dom";
+    import { Link } from "react-router-dom";
 
 
     const FaqAbout = () => {
-        const FaqAbout_image_img = useLoaderData()
         return (
             <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
             <img className={'FaqAbout_image_img'}
-                src={FaqAbout_image_img}
+                src={require('../../../../assets/background-main.jpg')}
                 alt="123"
                     />
             </div>
@@ -28,9 +27,5 @@
         );
     };
 
-
-const FaqAboutLoader = async ({request, params}) => {
-    const img = new Image();
-    img.src = require('../../../../assets/background-main.jpg');
-}
-    export default (FaqAbout, FaqAboutLoader);
+    
+    export default FaqAbout;

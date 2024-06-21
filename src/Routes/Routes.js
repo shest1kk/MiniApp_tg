@@ -28,7 +28,7 @@ const router = createBrowserRouter(
             <Route path={'sections'} element={<AllSection />} />
             
             <Route path={'faq'} element={<FAQ />} />
-            <Route path={'faq/about'} element={<FaqAbout />} loader={FaqAboutLoader} />
+            <Route path={'faq/about'} element={<FaqAbout />} />
             <Route path={'faq/map'} element={<FaqMap />} />
             <Route path={'faq/living'} element={<FaqLiving />} /> 
 
