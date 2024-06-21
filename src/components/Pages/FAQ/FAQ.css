@@ -7,7 +7,7 @@
 
 .FAQ_image {
     width: 80vw;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .Faq_image_img {
@@ -18,7 +18,6 @@
 .FAQ_text {
     color: var(--tg-theme-text-color);
     text-align: center;
-    margin-bottom: 20px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
