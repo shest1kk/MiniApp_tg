@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 const FAQ = () => {
     return (
         <div className={'FAQ_wrapper'}>
+        <div className={'FAQ_image'}>
+        <img className={'Faq_image_img'}
+            src={require('../../../assets/1.jpg')}
+            alt="123"
+                />
+        </div>
         <div className={'FAQ_text'}>
             <span>Общая информация</span>
             </div>
