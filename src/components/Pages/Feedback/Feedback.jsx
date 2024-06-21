@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Функция для копирования текста и вывода alert через Telegram WebApp
 const handleCopyText = () => {
-  const textToCopy = '+7 (996) 918-47-07';
+  const textToCopy = '+79969184707';
 
   // Копируем текст в буфер обмена
   navigator.clipboard.writeText(textToCopy).then(() => {
