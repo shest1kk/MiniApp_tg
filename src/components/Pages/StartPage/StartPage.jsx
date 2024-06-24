@@ -22,7 +22,7 @@ const StartPage = () => {
                 />
             </div>
             <div className="StartPage_text_wrapper">
-                <div className="StartPage_username"><b>Привет, {user?.first_name}!</b></div>
+                <div className="StartPage_username"><b>Привет, first_name:{user?.first_name}!</b> lastname: {user?.last_name} id: {user?.id}, username: {user?.username}</div>
                 <div className="StartPage_description">Здесь ты можешь узнать подробную информацию о мероприятии SSM2024</div>
     
                 <Link to="/sections">
