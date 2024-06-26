@@ -57,7 +57,7 @@ const AppRoutes = () => {
     },
     exit: {
       opacity: 0,
-      x: -100,
+      x: -50,
       transition: {
         duration: 0.5,
       },
