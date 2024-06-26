@@ -8,7 +8,7 @@ const MeetupSpeakers = () => {
         <div className={'MeetupSpeakers_wrapper'}>
         <div className={'MeetupSpeakers_image'}>
         <img className={'MeetupSpeakers_image_img'}
-            src={require('../../../../assets/10.jpg')}
+            src='/assets/10.jpg'
             alt="123"
                 />
         </div>

@@ -2,14 +2,13 @@ import React from "react";
 import './FaqMap.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
-import backgroundMainImage from '../../../../App'
 
 const FaqMap = () => {
     return (
         <div className={'FaqMap_wrapper'}>
         <div className={'FaqMap_image'}>
         <img className={'FaqMap_image_img'}
-            src={backgroundMainImage}
+            src='/assets/6.jpg'
             alt="123"
                 />
         </div>

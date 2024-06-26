@@ -1,22 +1,18 @@
 import React from "react";
-import LazyLoad from "react-lazyload";
 import './FaqAbout.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
-import backgroundMainImage from '../../../../assets/background-main.jpg';
 
 const FaqAbout = () => {
     return (
         <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
-                <LazyLoad height={200} offset={100}>
-                    <img className={'FaqAbout_image_img'}
-                        src={backgroundMainImage}
-                        alt="123"
-                    />
-                </LazyLoad>
+                <img className={'FaqAbout_image_img'}
+                    src='/assets/background-main.jpg'
+                    alt="123"
+                />
             </div>
-            <div className={'FaqAbout_text'}> 
+            <div className={'FaqAbout_text'}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                 Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
                 Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.

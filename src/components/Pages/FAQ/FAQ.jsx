@@ -7,7 +7,7 @@ const FAQ = () => {
         <div className={'FAQ_wrapper'}>
         <div className={'FAQ_image'}>
         <img className={'Faq_image_img'}
-            src={require('../../../assets/1.jpg')}
+            src='/assets/1.jpg'
             alt="123"
                 />
         </div>

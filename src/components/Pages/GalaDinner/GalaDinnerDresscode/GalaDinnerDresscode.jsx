@@ -7,7 +7,7 @@ const GalaDinnerDresscode = () => {
         <div className={'GalaDinnerDresscode_wrapper'}>
         <div className={'GalaDinnerDresscode_image'}>
         <img className={'GalaDinnerDresscode_image_img'}
-            src={require('../../../../assets/6.jpg')}
+            src='/assets/6.jpg'
             alt="123"
                 />
         </div>
