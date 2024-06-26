@@ -1,32 +1,33 @@
-    import React from "react";
-    import './FaqAbout.css';
-    import Button from '../../../Buttons/Button';
-    import { Link } from "react-router-dom";
-    import backgroundMainImage from '../../../../assets/background-main.jpg';
+import React from "react";
+import LazyLoad from "react-lazyload";
+import './FaqAbout.css';
+import Button from '../../../Buttons/Button';
+import { Link } from "react-router-dom";
+import backgroundMainImage from '../../../../assets/background-main.jpg';
 
-
-    const FaqAbout = () => {
-        return (
-            <div className={'FaqAbout_wrapper'}>
+const FaqAbout = () => {
+    return (
+        <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
-            <img className={'FaqAbout_image_img'}
-                src={backgroundMainImage}
-                alt="123"
+                <LazyLoad height={200} offset={100}>
+                    <img className={'FaqAbout_image_img'}
+                        src={backgroundMainImage}
+                        alt="123"
                     />
+                </LazyLoad>
             </div>
-            <div className={'FaqAbout_text'}> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            <div className={'FaqAbout_text'}> 
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                 Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
                 Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
             </div>
-                <div className={'FaqAbout-button'}>
+            <div className={'FaqAbout-button'}>
                 <Link to='/faq'>
-                <Button className={'primary-button'}>Назад</Button>
+                    <Button className={'primary-button'}>Назад</Button>
                 </Link>
-                
             </div>
-            </div>
-        );
-    };
+        </div>
+    );
+};
 
-    
-    export default FaqAbout;
+export default FaqAbout;
