@@ -52,14 +52,14 @@ const AppRoutes = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
+        duration: 1,
       },
     },
     exit: {
       opacity: 0,
       x: -50,
       transition: {
-        duration: 0.5,
+        duration: 1,
       },
     },
   };
