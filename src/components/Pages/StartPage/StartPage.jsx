@@ -39,7 +39,7 @@ const StartPage = () => {
             <div className="StartPage_image">
                 <img 
                     className="StartPage_image_img"
-                    src={require('../../../assets/logo.png')}
+                    src={require('../../../assets/logo.svg')}
                     alt="Логотип ЭйКей"
                 />
             </div>
