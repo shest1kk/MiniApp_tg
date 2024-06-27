@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const StartPage = () => {
     const { user, tg } = useTelegram();
 
-    useEffect(() => {
+    useEffect((tg) => {
         
         const fetchData = async() => {
             try {
