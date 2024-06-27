@@ -45,263 +45,104 @@ const AppRoutes = () => {
   const motionVariants = {
     initial: {
       opacity: 0,
-      x: 100,
+      scale: 0.8,
       display: 'flex',
     },
     animate: {
       opacity: 1,
-      x: 0,
+      scale: 1,
       transition: {
         duration: 1,
       },
     },
     exit: {
       opacity: 0,
-      x: -50,
+      scale: 0.8,
       transition: {
         duration: 1,
       },
     },
   };
   
-  const StartPageWithAnimation = () => {
+  const AnimatedComponent = ({ children, keyName }) => {
     return (
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode="wait">
         <motion.div
-          key="start-page"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
+          key={keyName}
+          variants={motionVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
-          <StartPage />
+          {children}
         </motion.div>
       </AnimatePresence>
     );
-  }
+  };
+  
+  // Используем AnimatedComponent для каждой страницы
+  const StartPageWithAnimation = () => {
+    return <AnimatedComponent keyName="start-page"><StartPage /></AnimatedComponent>;
+  };
   
   const AllSectionWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="all-section"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <AllSection />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="all-section"><AllSection /></AnimatedComponent>;
+  };
   
   const FAQWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="faq"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <FAQ />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="faq"><FAQ /></AnimatedComponent>;
+  };
   
   const FaqAboutWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="faq-about"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <FaqAbout />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="faq-about"><FaqAbout /></AnimatedComponent>;
+  };
   
   const FaqMapWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="faq-map"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <FaqMap />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="faq-map"><FaqMap /></AnimatedComponent>;
+  };
   
   const FaqLivingWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="faq-living"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <FaqLiving />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="faq-living"><FaqLiving /></AnimatedComponent>;
+  };
   
   const GalaDinnerWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="gala-dinner"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <GalaDinner />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="gala-dinner"><GalaDinner /></AnimatedComponent>;
+  };
   
   const GalaDinnerConceptionWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="gala-dinner-conception"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <GalaDinnerConception />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="gala-dinner-conception"><GalaDinnerConception /></AnimatedComponent>;
+  };
   
   const GalaDinnerDresscodeWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="gala-dinner-dresscode"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <GalaDinnerDresscode />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="gala-dinner-dresscode"><GalaDinnerDresscode /></AnimatedComponent>;
+  };
   
   const GalaDinnerTimingWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="gala-dinner-timing"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <GalaDinnerTiming />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
-  
-  const MeetupWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="meetup"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <Meetup />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="gala-dinner-timing"><GalaDinnerTiming /></AnimatedComponent>;
+  };
   
   const MeetupConceptionWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="meetup-conception"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <MeetupConception />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="meetup-conception"><MeetupConception /></AnimatedComponent>;
+  };
   
   const MeetupDiscussionWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="meetup-discussion"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <MeetupDiscussion />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="meetup-discussion"><MeetupDiscussion /></AnimatedComponent>;
+  };
+  
+  const MeetupWithAnimation = () => {
+    return <AnimatedComponent keyName="meetup"><Meetup /></AnimatedComponent>;
+  };
   
   const MeetupSpeakersWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="meetup-speakers"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <MeetupSpeakers />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="meetup-speakers"><MeetupSpeakers /></AnimatedComponent>;
+  };
   
   const MeetupTimingWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="meetup-timing"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <MeetupTiming />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="meetup-timing"><MeetupTiming /></AnimatedComponent>;
+  };
   
   const FeedbackWithAnimation = () => {
-    return (
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key="feedback"
-          initial={motionVariants.initial}
-          animate={motionVariants.animate}
-          exit={motionVariants.exit}
-        >
-          <Feedback />
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
+    return <AnimatedComponent keyName="feedback"><Feedback /></AnimatedComponent>;
+  };
   
   export default AppRoutes;
