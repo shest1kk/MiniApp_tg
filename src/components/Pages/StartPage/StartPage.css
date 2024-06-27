@@ -112,7 +112,7 @@ html, body {
 
 .StartPage_image_asset_green {
     position: absolute;
-    margin-top: -2vh;
+    margin-top: -4vh;
     margin-right: 50vw;
 
 }
@@ -120,6 +120,6 @@ html, body {
 .StartPage_image_asset_orange {
     position: absolute;
     margin-top: 2vh;
-    margin-left: 90vw;
+    margin-left: 75vw;
 
 }
