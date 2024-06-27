@@ -16,6 +16,7 @@ import MeetupDiscussion from '../components/Pages/Meetup/MeetupDiscussion/Meetup
 import MeetupSpeakers from '../components/Pages/Meetup/MeetupSpeakers/MeetupSpeakers';
 import MeetupTiming from '../components/Pages/Meetup/MeetupTiming/MeetupTiming';
 import Feedback from '../components/Pages/Feedback/Feedback';
+import React from 'react';
 
 const AppRoutes = () => {
     return (

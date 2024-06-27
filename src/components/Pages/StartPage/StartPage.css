@@ -75,13 +75,15 @@ html, body {
 }
 
 .StartPage_image {
+    display: flex;
+    justify-content: center;
     width: 80vw;
     margin-bottom: 15px;
 }
 
 .StartPage_image_img {
     height: 50vh;
-    width: 100%;
+    width: 50%;
 }
 
 .StartPage_text_wrapper {
