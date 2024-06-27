@@ -25,7 +25,7 @@ html, body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: var(--tg-theme-text-color);
+    color: #fff;
     font-size: 18px;
 }
 
@@ -87,12 +87,12 @@ html, body {
 }
 
 .StartPage_text_wrapper {
-    color: var(--tg-theme-text-color);
+    color: #fff;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .StartPage_wrapper button {

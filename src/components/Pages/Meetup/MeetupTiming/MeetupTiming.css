@@ -16,7 +16,7 @@
 }
 
 .MeetupTiming_text {
-    color: var(--tg-theme-text-color);
+    color: #fff;
     text-align: justify;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;

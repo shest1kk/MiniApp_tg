@@ -7,7 +7,7 @@ const Meetup = () => {
         <div className={'Meetup_wrapper'}>
             <div className={'Meetup_image'}>
         <img className={'Meetup_image_img'}
-            src='/assets/8.jpg'
+            src='/assets/logo.png'
             alt="123"
                 />
         </div>

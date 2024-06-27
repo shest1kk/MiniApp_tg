@@ -16,7 +16,7 @@
 }
 
 .FaqAbout_text {
-    color: var(--tg-theme-text-color);
+    color: #fff;
     text-align: justify;
     margin-bottom: 20px;
     font-family: "Montserrat", sans-serif;

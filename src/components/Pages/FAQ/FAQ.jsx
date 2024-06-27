@@ -7,7 +7,7 @@ const FAQ = () => {
         <div className={'FAQ_wrapper'}>
         <div className={'FAQ_image'}>
         <img className={'Faq_image_img'}
-            src='/assets/1.jpg'
+            src='/assets/logo.png'
             alt="123"
                 />
         </div>

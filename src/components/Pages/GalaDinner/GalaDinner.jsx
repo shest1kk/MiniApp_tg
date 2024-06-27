@@ -7,7 +7,7 @@ const GalaDinner = () => {
         <div className={'GalaDinner_wrapper'}>
             <div className={'GalaDinner_image'}>
             <img className={'GalaDinner_image_img'}
-            src='/assets/4.jpg'
+            src='/assets/logo.png'
             alt="123"
                 />
             </div>
