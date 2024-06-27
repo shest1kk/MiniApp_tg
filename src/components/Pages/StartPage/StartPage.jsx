@@ -8,6 +8,20 @@ const StartPage = () => {
     const { user, tg } = useTelegram();
 
     useEffect(() => {
+        
+        const fetchData = async() => {
+            try {
+                const response = await axios.get(`https://af50-86-110-216-34.ngrok-free.app/users/?user_id=${tg.initDataUnsafe.user.id}`);
+                    console.log(response.data);
+                    console.log(`Привет, ${tg.initDataUnsafe.user.id}`)
+            }
+                    catch (error) {
+                    console.error('Error:', error)
+                    }
+        }
+
+        fetchData();
+
         // Динамическое добавление скрипта для предварительной загрузки
         const script = document.createElement("script");
         script.src = "/preload.js"; // Убедитесь, что файл находится в публичной директории
