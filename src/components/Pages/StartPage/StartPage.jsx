@@ -4,6 +4,8 @@ import { useTelegram } from "../../../hooks/useTelegram";
 import Button from "../../Buttons/Button";
 import { Link } from "react-router-dom";
 
+import logo from '../../../assets/logo.svg'
+
 const StartPage = () => {
     const { user, tg } = useTelegram();
 
@@ -37,9 +39,9 @@ const StartPage = () => {
     return (
         <div className="StartPage_wrapper">
             <div className="StartPage_image">
-                <img 
+                <img
                     className="StartPage_image_img"
-                    src={require('../../../assets/logo.svg')}
+                    src={logo}
                     alt="Логотип ЭйКей"
                 />
             </div>
