@@ -32,8 +32,8 @@ html, body {
 
 .button-primary-button {
     padding: 10px 15px;
-    background:  #3366ff;
-    color: #fff;
+    background:  #fff;
+    color: #000;
     border: none;
     outline: none;
     cursor: pointer;

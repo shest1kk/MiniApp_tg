@@ -2,9 +2,18 @@ import React from "react";
 import './AllSection.css';
 import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
+import logo from '../../../assets/logo.png'
 const AllSection = () => {
     return (
         <div className={'categories_wrapper'}>
+            <div className="categories_image">
+                
+                <img
+                    className="categories_image_img"
+                    src={logo}
+                    alt="Логотип ЭйКей"
+                />
+            </div>
         <div className={'categories_text'}>
             <span>Выбери раздел</span>
             </div>
