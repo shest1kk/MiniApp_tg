@@ -102,3 +102,22 @@ html, body {
 .StartPage_description {
     margin-top: 5px;
 }
+
+.StartPage_image_assets {
+    width: 300px;
+    display: flex;
+    position: absolute;
+    justify-content: center;   
+}
+
+.StartPage_image_asset_green {
+    position: absolute;
+    margin-top: 280px;
+    margin-right: 248px;
+}
+
+.StartPage_image_asset_orange {
+    position: absolute;
+    margin-top: 325px;
+    margin-left: 248px;
+}

@@ -10,20 +10,7 @@ const StartPage = () => {
     const { user, tg } = useTelegram();
 
     useEffect((tg) => {
-        
-        const fetchData = async() => {
-            try {
-                const response = await axios.get(`https://af50-86-110-216-34.ngrok-free.app/users/?user_id=${tg.initDataUnsafe.user.id}`);
-                    console.log(response.data);
-                    console.log(`Привет, ${tg.initDataUnsafe.user.id}`)
-            }
-                    catch (error) {
-                    console.error('Error:', error)
-                    }
-        }
-
-        fetchData();
-
+                
         // Динамическое добавление скрипта для предварительной загрузки
         const script = document.createElement("script");
         script.src = "/preload.js"; // Убедитесь, что файл находится в публичной директории
@@ -39,6 +26,22 @@ const StartPage = () => {
     return (
         <div className="StartPage_wrapper">
             <div className="StartPage_image">
+                <div className='StartPage_image_assets'>
+                <div className='StartPage_image_asset_green'>
+                <img
+                    className="StartPage_image_img_asset_green"
+                    src={require('../../../assets/logo_asset_green.png')}
+                    alt="Логотип ЭйКей"
+                />
+                </div>
+                <div className='StartPage_image_asset_orange'>
+                <img
+                    className="StartPage_image_img_asset_orange"
+                    src={require('../../../assets/logo_asset_orange.png')}
+                    alt="Логотип ЭйКей"
+                />
+                </div>
+                </div>
                 <img
                     className="StartPage_image_img"
                     src={logo}
@@ -47,10 +50,10 @@ const StartPage = () => {
             </div>
             <div className="StartPage_text_wrapper">
                 <div className="StartPage_username">
-                    <b>Привет, {user?.first_name}!</b>
+                    <b>Привет,<br />{user?.first_name}!</b>
                 </div>
                 <div className="StartPage_description">
-                    Здесь ты можешь узнать подробную информацию о мероприятии SSM2024
+                    {/* Здесь ты можешь узнать подробную информацию о мероприятии SSM2024 */}
                 </div>
     
                 <Link to="/sections">
