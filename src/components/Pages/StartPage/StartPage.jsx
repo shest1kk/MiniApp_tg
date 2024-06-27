@@ -26,7 +26,20 @@ const StartPage = () => {
     return (
         <div className="StartPage_wrapper">
             <div className="StartPage_image">
-                <div className='StartPage_image_assets'>
+                
+                <img
+                    className="StartPage_image_img"
+                    src={logo}
+                    alt="Логотип ЭйКей"
+                />
+            </div>
+            <div className="StartPage_text_wrapper">
+                <div className="StartPage_username">
+                    <b>Привет,<br />{user?.first_name}!</b>
+                </div>
+                <div className="StartPage_description">
+                    {/* Здесь ты можешь узнать подробную информацию о мероприятии SSM2024 */}
+                    <div className='StartPage_image_assets'>
                 <div className='StartPage_image_asset_green'>
                 <img
                     className="StartPage_image_img_asset_green"
@@ -42,18 +55,6 @@ const StartPage = () => {
                 />
                 </div>
                 </div>
-                <img
-                    className="StartPage_image_img"
-                    src={logo}
-                    alt="Логотип ЭйКей"
-                />
-            </div>
-            <div className="StartPage_text_wrapper">
-                <div className="StartPage_username">
-                    <b>Привет,<br />{user?.first_name}!</b>
-                </div>
-                <div className="StartPage_description">
-                    {/* Здесь ты можешь узнать подробную информацию о мероприятии SSM2024 */}
                 </div>
     
                 <Link to="/sections">
