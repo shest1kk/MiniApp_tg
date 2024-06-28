@@ -7,7 +7,7 @@ const Meetup = () => {
         <div className={'Meetup_wrapper'}>
             <div className={'Meetup_image'}>
         <img className={'Meetup_image_img'}
-            src='/assets/logo.png'
+            src='/assets/logo.svg'
             alt="123"
                 />
         </div>

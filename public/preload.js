@@ -15,7 +15,7 @@
         '/assets/12.jpg',
         '/assets/13.jpg',
         '/assets/14.jpg',
-        '/assets/logo.png',
+        '/assets/logo.svg',
         '/assets/logo.svg'
 
         // Добавьте остальные URL-адреса изображений
