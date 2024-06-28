@@ -77,13 +77,13 @@ html, body {
 .StartPage_image {
     display: flex;
     justify-content: center;
-    /* width: 80vw; */
+    width: 80vw;
     margin-bottom: 15px;
 }
 
 .StartPage_image_img {
-    /* height: 40vh;
-    width: 70%; */
+    height: 40vh;
+    width: 70%;
 }
 
 .StartPage_text_wrapper {
