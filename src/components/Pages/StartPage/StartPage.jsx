@@ -5,6 +5,8 @@ import Button from "../../Buttons/Button";
 import { Link } from "react-router-dom";
 
 import logo from '../../../assets/logo.svg'
+import logo_asset_green from '../../../assets/logo_asset_green.svg'
+import logo_asset_orange from '../../../assets/logo_asset_orange.svg'
 
 const StartPage = () => {
     const { user, tg } = useTelegram();
@@ -43,14 +45,14 @@ const StartPage = () => {
                 <div className='StartPage_image_asset_green'>
                 <img
                     className="StartPage_image_img_asset_green"
-                    src={require('../../../assets/logo_asset_green.png')}
+                    src={logo_asset_green}
                     alt="Логотип ЭйКей"
                 />
                 </div>
                 <div className='StartPage_image_asset_orange'>
                 <img
                     className="StartPage_image_img_asset_orange"
-                    src={require('../../../assets/logo_asset_orange.png')}
+                    src={logo_asset_orange}
                     alt="Логотип ЭйКей"
                 />
                 </div>
