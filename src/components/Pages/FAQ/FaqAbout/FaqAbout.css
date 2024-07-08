@@ -50,13 +50,14 @@
     font-size: 30px;
     font-weight: bold;
     padding-left: 7vw;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 
 ul {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 li {
