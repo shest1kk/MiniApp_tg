@@ -3,6 +3,9 @@ import './GalaDinner.css';
 import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
 const GalaDinner = () => {
+    const handleClick = () => {
+        alert('Скоро будет');
+    };
     return (
         <div className={'GalaDinner_wrapper'}>
             <div className={'GalaDinner_image'}>
@@ -18,12 +21,12 @@ const GalaDinner = () => {
             <Link to="dresscode">
             <Button className={'primary-button'}>Дресскод</Button>
             </Link>
-            <Link to='timing'>
-            <Button disabled='true' className={'primary-button'}>Тайминги</Button>
-            </Link>
-            <Link to='where'>
-            <Button disabled='true' className={'primary-button'}>Где находится</Button>
-            </Link>
+            {/* <Link to='timing'> */}
+            <Button onClick={handleClick}className={'primary-button'}>Тайминги</Button>
+            {/* </Link> */}
+            {/* <Link to='where'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Где находится</Button>
+            {/* </Link> */}
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

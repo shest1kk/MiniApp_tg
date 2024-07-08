@@ -3,6 +3,9 @@ import './FAQ.css';
 import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
 const FAQ = () => {
+    const handleClick = () => {
+        alert('Скоро будет');
+    };
     return (
         <div className={'FAQ_wrapper'}>
         <div className={'FAQ_image'}>
@@ -21,9 +24,9 @@ const FAQ = () => {
             <Link to='living'>
             <Button className={'primary-button'}>Проживание</Button>
             </Link>
-            <Link to='map'>
-            <Button disabled='true' className={'primary-button'}>Территория отеля</Button>
-            </Link>
+            {/* <Link to='map'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Территория отеля</Button>
+            {/* </Link> */}
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>
