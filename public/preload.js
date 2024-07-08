@@ -16,7 +16,12 @@
         '/assets/13.jpg',
         '/assets/14.jpg',
         '/assets/logo.svg',
-        '/assets/logo.svg'
+        '/assets/logo.svg',
+        '/assets/dresscode.svg',
+        '/assets/FaqAbout_frame.svg',
+        '/assets/living.svg',
+        '/assets/test.svg',
+        '/testimfonts.svg'
 
         // Добавьте остальные URL-адреса изображений
     ];
