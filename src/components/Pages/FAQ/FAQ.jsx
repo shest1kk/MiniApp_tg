@@ -18,11 +18,11 @@ const FAQ = () => {
             <Link to='about'>
             <Button className={'primary-button'}>Что входит в проживание</Button>
             </Link>
-            <Link to='map'>
-            <Button className={'primary-button'}>Территория отеля</Button>
-            </Link>
             <Link to='living'>
             <Button className={'primary-button'}>Проживание</Button>
+            </Link>
+            <Link to='map'>
+            <Button disabled='true' className={'primary-button'}>Территория отеля</Button>
             </Link>
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>

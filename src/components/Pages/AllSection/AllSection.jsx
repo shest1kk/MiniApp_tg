@@ -3,7 +3,13 @@ import './AllSection.css';
 import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.svg'
+const tg = Telegram.WebApp
+
+
 const AllSection = () => {
+    const handleClick = () => {
+        alert('Скоро будет');
+    };
     return (
         <div className={'categories_wrapper'}>
             <div className="categories_image">
@@ -25,10 +31,10 @@ const AllSection = () => {
             <Button className={'primary-button'}>Гала-ужин</Button>
             </Link>
             <Link to='/meetup'>
-            <Button className={'primary-button'}>Конференция</Button>
+            <Button onClick={handleClick} className={'primary-button'}>Конференция</Button>
             </Link>
             <Link to='/feedback'>
-            <Button className={'primary-button'}>Обратная связь</Button>
+            <Button disabled='true' className={'primary-button'}>Обратная связь</Button>
             </Link>
         
         </div>
