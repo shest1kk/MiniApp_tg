@@ -19,7 +19,7 @@ const GalaDinner = () => {
         </div>
         <div className={'GalaDinner_categories'}>
             <Link to="dresscode">
-            <Button className={'primary-button'}>Дресскод</Button>
+            <Button className={'primary-button'}>Дресс-код</Button>
             </Link>
             {/* <Link to='timing'> */}
             <Button onClick={handleClick}className={'primary-button'}>Тайминги</Button>
