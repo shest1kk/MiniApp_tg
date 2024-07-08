@@ -41,7 +41,9 @@
 }
 
 .GalaDinnerDresscode_text_girls,
-.GalaDinnerDresscode_text_mans {
+.GalaDinnerDresscode_text_mans,
+.GalaDinnerDresscode_text_no,
+.GalaDinnerDresscode_text_yes {
     font-size: 24px;
     font-weight: bold;
     padding-left: 7vw;

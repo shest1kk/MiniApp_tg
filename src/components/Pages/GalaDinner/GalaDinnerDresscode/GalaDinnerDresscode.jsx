@@ -35,6 +35,20 @@ const GalaDinnerDresscode = () => {
                     <li>белые шорты/брюки/джинсы</li>
                 </ul>
             </div>
+            <div className={"GalaDinnerDresscode_text_no"}>
+            ❌Лучше воздержаться
+                <ul>
+                    <li>от принтов на белой одежде</li>
+                    <span className={'details'}>всё-таки чистый белый цвет выглядит роскошно </span>
+                </ul>
+            </div>
+            <div className={"GalaDinnerDresscode_text_yes"}>
+            ✅Допускаются любого цвета:
+                <ul>
+                    <li>аксессуары, обувь, ремни, сумки</li>
+                    <span className={'details'}>в случае, если они будут не белыми, а цветными, это не будет нарушением дресскода </span>
+                </ul>
+            </div>
                         <div className={'GalaDinnerDresscode-button'}>
                 <Link to='/galadinner'>
                     <Button className={'primary-button'}>Назад</Button>
