@@ -27,7 +27,7 @@ const AppRoutes = () => {
           <Route path="/faq" element={<FAQWithAnimation />} />
           <Route path="/faq/about" element={<FaqAbout/>} />
           <Route path="/faq/map" element={<FaqMapWithAnimation />} />
-          <Route path="/faq/living" element={<FaqLivingWithAnimation />} />
+          <Route path="/faq/living" element={<FaqLiving/>} />
           <Route path="/galadinner" element={<GalaDinnerWithAnimation />} />
           <Route path="/galadinner/conception" element={<GalaDinnerConceptionWithAnimation />} />
           <Route path="/galadinner/dresscode" element={<GalaDinnerDresscodeWithAnimation />} />
