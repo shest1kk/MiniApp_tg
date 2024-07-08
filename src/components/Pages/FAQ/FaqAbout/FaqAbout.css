@@ -35,7 +35,7 @@
     font-style: normal;
     font-size: 18px;
     background-color: #EBEBE1;
-    height: 67vh;
+
 
 }
 
@@ -47,7 +47,12 @@
 
 .FaqAbout_text_Eating,
 .FaqAbout_text_Gym,
-.FaqAbout_text_Games {
+.FaqAbout_text_Games,
+.FaqAbout_text_show,
+.FaqAbout_text_streams,
+.FaqAbout_text_parking,
+.FaqAbout_text_bbq,
+.FaqAbout_text_wifi {
     font-size: 30px;
     font-weight: bold;
     padding-left: 7vw;
@@ -79,7 +84,7 @@ li {
     align-items: flex-start;
     align-content: center;
     flex-direction: column;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
 }
 
 .FaqAbout_headerText {
