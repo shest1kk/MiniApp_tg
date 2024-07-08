@@ -91,3 +91,7 @@ li {
 .FaqAbout_headerText {
     padding-top: 20px;
 }
+
+.FaqAbout_text_streams span {
+    color: #3C73BE;
+}
