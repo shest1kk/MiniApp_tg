@@ -7,7 +7,7 @@ const FaqLiving = () => {
     return (
         <div className={'FaqLiving_wrapper'}>
         <div className={'FaqLiving_image'}>
-                <div className="FaqLiving_headerText">
+                <div className={"FaqLiving_headerText"}>
                     <img classname={'FaqLiving_headerText_img'} 
                     src='/assets/living.svg'
                     alt='123'/>

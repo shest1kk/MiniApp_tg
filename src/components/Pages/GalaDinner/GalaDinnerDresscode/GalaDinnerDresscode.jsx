@@ -6,7 +6,7 @@ const GalaDinnerDresscode = () => {
     return (
         <div className={'GalaDinnerDresscode_wrapper'}>
         <div className={'GalaDinnerDresscode_image'}>
-                <div className="GalaDinnerDresscode_headerText">
+                <div className={"GalaDinnerDresscode_headerText"}>
                     <img classname={'GalaDinnerDresscode_headerText_img'} 
                     src='/assets/dresscode.svg'
                     alt='123'/>
@@ -17,8 +17,8 @@ const GalaDinnerDresscode = () => {
                 />
             </div>
             <div className={'GalaDinnerDresscode_text'}>
-                <div className="GalaDinnerDresscode_text_wrapper">
-                <div className="GalaDinnerDresscode_text_girls">
+                <div className={"GalaDinnerDresscode_text_wrapper"}>
+                <div className={"GalaDinnerDresscode_text_girls"}>
                 👩🏼Для девушек отлично подойдут:
                 <ul>
                     <li>белые платья/комбезы</li>
@@ -28,7 +28,7 @@ const GalaDinnerDresscode = () => {
                     <li>белые шорты/джинсы</li>
                 </ul>
                 </div>
-                <div className="GalaDinnerDresscode_text_mans">
+                <div className={"GalaDinnerDresscode_text_mans"}>
                 👨🏼Мужчины будут прекрасно смотреться в:
                 <ul>
                     <li>белые рубашки/футболки/кофты</li>

@@ -9,13 +9,13 @@ const FaqAbout = () => {
             <div className={'FaqAbout_image'}>
                 <div className="FaqAbout_headerText">
                     <img classname={'FaqAbout_headerText_img'} 
-                    src='/assets/testimfaq.svg'
+                    src='/assets/testimfonts.svg'
                     alt='123'/>
                 </div>
-                {/* <img className={'FaqAbout_image_img'}
+                <img className={'FaqAbout_image_img'}
                     src='/assets/logo.svg'
                     alt="123"
-                /> */}
+                />
             </div>
             <div className={'FaqAbout_text'}>
                 <div className="FaqAbout_text_wrapper">
