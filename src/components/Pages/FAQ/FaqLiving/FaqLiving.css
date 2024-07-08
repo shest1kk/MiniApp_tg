@@ -42,7 +42,7 @@
 }
 
 th, td {
-    border: 1px dashed #000;
+    border: 1px double #000;
             text-align: center; /* Горизонтальное центрирование */
             vertical-align: middle; /* Вертикальное центрирование */
             height: 50px;
