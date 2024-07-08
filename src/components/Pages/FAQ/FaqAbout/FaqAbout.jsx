@@ -8,7 +8,9 @@ const FaqAbout = () => {
         <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
                 <div className="FaqAbout_headerText">
-                    Что входит<br/>в проживание
+                    <img classname={'FaqAbout_headerText_img'} 
+                    src='/assets/testimfonts.svg'
+                    alt='123'/>
                 </div>
                 <img className={'FaqAbout_image_img'}
                     src='/assets/logo.svg'
