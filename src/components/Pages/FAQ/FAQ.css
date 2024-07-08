@@ -3,13 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 80vw;
 }
 
 .FAQ_image {
     display: flex;
     justify-content: center;
     width: 80vw;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 .Faq_image_img {
@@ -18,7 +19,7 @@
 }
 
 .FAQ_text {
-    color: #fff;
+    color: #000;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;

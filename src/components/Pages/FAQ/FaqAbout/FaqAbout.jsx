@@ -7,8 +7,11 @@ const FaqAbout = () => {
     return (
         <div className={'FaqAbout_wrapper'}>
             <div className={'FaqAbout_image'}>
+                <div className="FaqAbout_headerText">
+                    Что входит<br/>в проживание
+                </div>
                 <img className={'FaqAbout_image_img'}
-                    src='/assets/background-main.jpg'
+                    src='/assets/logo.svg'
                     alt="123"
                 />
             </div>
