@@ -30,12 +30,12 @@ const AllSection = () => {
             <Link to='/galadinner'>
             <Button className={'primary-button'}>Гала-ужин</Button>
             </Link>
-            {/* <Link to='/meetup'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Конференция</Button>
-            {/* </Link> */}
-            <Link to='/feedback'>
-            <Button className={'primary-button'}>Обратная связь</Button>
+            <Link to='/meetup'>
+            <Button className={'primary-button'}>Конференция</Button>
             </Link>
+            {/* <Link to='/feedback'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Обратная связь</Button>
+            {/* </Link> */}
         
         </div>
         </div>

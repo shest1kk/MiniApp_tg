@@ -3,6 +3,9 @@ import './Meetup.css';
 import Button from '../../Buttons/Button';
 import { Link } from "react-router-dom";
 const Meetup = () => {
+    const handleClick = () => {
+        alert('Скоро будет');
+    };
     return (
         <div className={'Meetup_wrapper'}>
             <div className={'Meetup_image'}>
@@ -15,18 +18,18 @@ const Meetup = () => {
             <span>Конференция</span>
             </div>
         <div className={'Meetup_categories'}>
-            <Link to='conception'>
-            <Button className={'primary-button'}>Концепция</Button>
-            </Link>
-            <Link to='speakers'>
-            <Button className={'primary-button'}>Спикеры</Button>
-            </Link>
             <Link to='discussion'>
             <Button className={'primary-button'}>Панельная дискуссия</Button>
             </Link>
-            <Link to='timing'>
-            <Button className={'primary-button'}>Тайминги</Button>
-            </Link>
+            {/* <Link to='speakers'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button>
+            {/* </Link> */}
+            {/* <Link to='conception'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Концепция</Button>
+            {/* </Link> */}
+            {/* <Link to='timing'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Тайминги</Button>
+            {/* </Link> */}
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

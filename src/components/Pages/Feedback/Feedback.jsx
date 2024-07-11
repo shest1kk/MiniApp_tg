@@ -30,7 +30,7 @@ const Feedback = () => {
           <Button className={'primary-button'}>WhatsApp</Button>
         </a>
         <Button className={'primary-button'} onClick={handleCopyText}>Телефон</Button> */}
-        <a href="https://forms.yandex.ru/cloud/668ff7fc2530c20ae9c4822f/">
+        <a href="https://forms.yandex.ru/cloud/66754735eb61465b7d472f3f/">
           <Button className={'primary-button'}>Задать вопрос</Button>
         </a>
         <Link to='/sections'>
