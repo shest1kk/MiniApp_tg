@@ -98,6 +98,8 @@ table {
     box-sizing: border-box;
     border-radius: 30px;
     border-color: #82D7E1;
+    height: 5vh;
+    width: 42vh;
 }
 
 .search-input-container {
@@ -113,7 +115,7 @@ table {
 .scroll-to-top {
     position: fixed;
     bottom: 50vh;
-    right: calc(5.5% - 20px); /* Позиционируем по центру экрана по вертикали и смещаем вправо */
+    right: calc(4.5% - 20px); /* Позиционируем по центру экрана по вертикали и смещаем вправо */
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -124,6 +126,13 @@ table {
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
+    background-color: #82D7E1;
+    border-radius: 25px;
+    padding: 2px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-to-top img {
