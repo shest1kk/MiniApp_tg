@@ -139,4 +139,5 @@ table {
 .scroll-to-top img {
     width: 45px; /* Небольшой размер стрелки */
     height: auto;
+    opacity: .7;
 }
