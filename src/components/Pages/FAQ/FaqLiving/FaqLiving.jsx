@@ -6,12 +6,13 @@ import { FaSearch } from 'react-icons/fa'; // Импортируем иконк�
 
 const FaqLiving = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [highlightedName, setHighlightedName] = useState('');
+    const [highlightedRowId, setHighlightedRowId] = useState(null); // Initialize highlightedRowId with null
     const bottomSpacerRef = useRef(null);
     const [isSticky, setIsSticky] = useState(true);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
     const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
     const inputRef = useRef(null); // Ref для поля ввода
+
 
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
@@ -94,7 +95,7 @@ const FaqLiving = () => {
     ];
 
 
- const scrollToRow = (row) => {
+    const scrollToRow = (row) => {
         if (row) {
             const rowTop = row.offsetTop;
             const rowHeight = row.offsetHeight;
@@ -122,10 +123,7 @@ const FaqLiving = () => {
             names.forEach(nameDiv => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    setHighlightedName(name); // Устанавливаем фамилию для подсветки
-                    setTimeout(() => {
-                        setHighlightedName(''); // Через 3 секунды сбрасываем подсветку
-                    }, 3000);
+                    setHighlightedRowId(row.id); // Устанавливаем id строки для подсветки
                     scrollToRow(row);
                     found = true;
                 }
