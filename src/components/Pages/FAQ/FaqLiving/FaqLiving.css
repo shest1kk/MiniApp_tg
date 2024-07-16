@@ -96,19 +96,37 @@ table {
     padding: 10px;
     margin-right: 10px;
     box-sizing: border-box;
+    border-radius: 30px;
+    border-color: #82D7E1;
+}
+
+.search-input-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .search-button {
     padding: 10px 20px;
 }
-
-.highlighted {
-    background-color: yellow; /* Цвет выделения */
-    animation: highlight 3s ease; /* Анимация выделения на 3 секунды */
+.scroll-to-top {
+    position: fixed;
+    bottom: 50vh;
+    right: calc(5.5% - 20px); /* Позиционируем по центру экрана по вертикали и смещаем вправо */
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10; /* Поверх других элементов */
 }
 
-@keyframes highlight {
-    0% { background-color: yellow; }
-    50% { background-color: transparent; }
-    100% { background-color: yellow; }
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top img {
+    width: 30px; /* Небольшой размер стрелки */
+    height: auto;
 }

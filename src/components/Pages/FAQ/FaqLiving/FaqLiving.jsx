@@ -2,45 +2,123 @@ import React, { useState, useEffect, useRef } from "react";
 import './FaqLiving.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa'; // Импортируем иконку поиска
 
 const FaqLiving = () => {
-    const [isSticky, setIsSticky] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
-    const [highlightedRow, setHighlightedRow] = useState(null);
     const bottomSpacerRef = useRef(null);
+    const [isSticky, setIsSticky] = useState(true);
+    const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
+    const guestData = [
+        { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
+        { id: 2, names: ["Кушкин Алексей", "Пилосян Меликсет"] },
+        { id: 3, names: ["Селезнева Екатерина", "Вилонина Юлия"] },
+        { id: 4, names: ["Леваков Александр", "Егоров Александр"] },
+        { id: 5, names: ["Елсаков Алексей", "Лапшин Артём"] },
+        { id: 6, names: ["Тулина Мария", "Кабиева Диана"] },
+        { id: 7, names: ["Баранов Иван", "Сморода Роман"] },
+        { id: 8, names: ["Хромов Роман", "Ахметвалеев Артур"]},
+        { id: 9, names: ["Полянская Светлана", "Шичкина Екатерина"] },
+        { id: 10, names: ["Шарова Кристина", "Познаева Лилит"] },
+        { id: 11, names: ["Михеева Елена", "Красавина Виктория"] },
+        { id: 12, names: ["Трошкина Екатерина", "Павлюк Сильвия"] },
+        { id: 13, names: ["Прокофьева Мария", "Круглова Юлия"] },
+        { id: 14, names: ["Власова Иван", "Ярмухамедов Тимур"] },
+        { id: 15, names: ["Мильниченко Анастасия", "Прудникова Светлана"] },
+        { id: 16, names: ["Лепская Екатерина", "Болдырева Алия"] },
+        { id: 17, names: ["Дударева Оксана", "Пескова Елизавета"] },
+        { id: 18, names: ["Лебедев Дмитрий", "Бабушкин Михаил"] },
+        { id: 19, names: ["Юсипов Дмитрий", "Еремин Станислав"] },
+        { id: 20, names: ["Муза Юрий", "Василенко Максим"] },
+        { id: 21, names: ["Артемова Мария", "Молдаванова Олеся"] },
+        { id: 22, names: ["Корнеева Елена", "Синёва Евгения"] },
+        { id: 23, names: ["Прокофьева Виктория", "Кокорская Ирина"] },
+        { id: 24, names: ["Войнов Роман", "Алиев Рафгат"] },
+        { id: 25, names: ["Нурмуханова Айгуль", "Нурмуханов Аят"] },
+        { id: 26, names: ["Павлова Анастасия", "Лукина Замира"] },
+        { id: 27, names: ["Дмитриева Лариса", "Кававина Любовь"] },
+        { id: 28, names: ["Гулямов Фархад", "Жабинский Михаил"] },
+        { id: 29, names: ["Юсупова Кристина", "Денисова Анна"] },
+        { id: 30, names: ["Власова Анна", "Салихова Анна"] },
+        { id: 31, names: ["Пряхина Надежда", "Васенева Катрина"] },
+        { id: 32, names: ["Железова Людмила", "Танделова Диана"] },
+        { id: 33, names: ["Мальцева Ирина", "Трифонова Екатерина"] },
+        { id: 34, names: ["Горбунова Ольга", "Мохова Галина"] },
+        { id: 35, names: ["Бурыкина Анастасия", "Садовская Екатерина"] },
+        { id: 36, names: ["Виноградова Екатерина", "Григорян Наталья"] },
+        { id: 37, names: ["Антипанова Серафима", "Шелудякова Виктория"] },
+        { id: 38, names: ["Джафарова Камила", "Смельцова Ксения"] },
+        { id: 39, names: ["Савельева Анна", "Языкова Елена"] },
+        { id: 40, names: ["Мишеквич Эдуард", "Дёмин Владислав"] },
+        { id: 41, names: ["Фионина Ольга", "Маклакова Олеся"] },
+        { id: 42, names: ["Мокрова Анастасия", "Маркелова Арина"] },
+        { id: 43, names: ["Копылов Максим", "Костенко Никита"] },
+        { id: 44, names: ["Заботкина Виктория", "Корнилова Екатерина"] },
+        { id: 45, names: ["Николаева Светлана", "Тункина Елена"] },
+        { id: 46, names: ["Подрезов Никита", "Сорокин Юрий"] },
+        { id: 47, names: ["Виноградова Валентина", "Владыкина Диана"] },
+        { id: 48, names: ["Горельков Александр", "Щукин Александр"] },
+        { id: 49, names: ["Баткаев Алмаз", "Богданов Максим"] },
+        { id: 50, names: ["Волкова Елена", "Подлегаева Дарья"] },
+        { id: 51, names: ["Столярова Софья", "Маслакова Инна"] },
+        { id: 52, names: ["Ильин Артём", "Гесейнов Рауф"] },
+        { id: 53, names: ["Домовитова Елизавета", "Сисеналиева Сауле"] },
+        { id: 54, names: ["Дауткулова Майя", "Мезей Алёна"] },
+        { id: 55, names: ["Демьянова Анастасия", "Калинина Лилия"] },
+        { id: 56, names: ["Андриянова Анастасия", "Анисимова Марина"] },
+        { id: 57, names: ["Шеменков Александр", "Затрутин Кирилл", "Беликов Никита"] },
+        { id: 58, names: ["Мельникова Татьяна", "Лазутина Ирина", "Тимченко Юлия"] },
+        { id: 59, names: ["Тугузов Роман", "Семенин Михаил", "Ахмедов Роман"] },
+        { id: 60, names: ["Чистяков Даниил", "Шатилов Николай", "Юдин Сергей"] },
+        { id: 61, names: ["Гужвина Наталья", "Уханова Оксана", "Королева Ольга"] },
+        { id: 62, names: ["Галузина Тамара", "Пугачева Алла", "Белова Ирина"] },
+        { id: 63, names: ["Шакирова Анна", "Пирогова Нина", "Канаева Мария"] },
+        { id: 64, names: ["Павлова Дарья", "Бабина Светлана", "Митина Елена"] },
+        { id: 65, names: ["Забежайлов Максим", "Захаревич Александр"] },
+        { id: 66, names: ["Уткина Анна", "Чернышова Елена", "Гаврилова Светлана"] },
+        { id: 67, names: ["Алышев Максим", "Куликов Максим", "Матвеев Евгений"] },
+        { id: 68, names: ["Мясникова Елена", "Касаткина Екатерина"] },
+        { id: 69, names: ["Максакова Ольга", "Смирнова Анна", "Зайцева Юлия"] },
+        { id: 70, names: ["Лаптев Евгений", "Ситцов Евгений", "Кузин Михаил"] },
+        { id: 71, names: ["Романов Иван", "Доброхотов Леонид", "Герасимов Владислав"] },
+        { id: 72, names: ["Пахарев Егор", "Павлов Андрей", "Попов Илья"] },
+        { id: 73, names: ["Леунин Александр", "Мусин Ринат"] },
+        { id: 74, names: ["Масленникова Алина", "Лукина Александра", "Михеева Анна", "Васина Елизавета", "Васина Анастасия"] },
+        { id: 75, names: ["Евдокимов Илья", "Вишняков Антон", "Михалёв Ярослав", "Романов Роман"] },
+
+
+    ];
+
+    const scrollToRow = (row) => {
+        if (row) {
+            const rowTop = row.offsetTop;
+            const rowHeight = row.offsetHeight;
             const windowHeight = window.innerHeight;
+            const scrollToPosition = rowTop + rowHeight / 2 - windowHeight / 2;
 
-            if (bottomSpacerTop <= windowHeight) {
-                setIsSticky(false);
-            } else {
-                setIsSticky(true);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+            window.scrollTo({
+                top: scrollToPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     const handleSearch = () => {
-        const elements = document.querySelectorAll('td');
-        elements.forEach(el => {
-            const names = el.textContent.split('<br/>'); // Разделяем ячейку на имена
-            names.forEach(name => {
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const names = row.cells[1].querySelectorAll('div');
+
+            names.forEach(nameDiv => {
+                const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    setHighlightedRow(el.parentNode);
-                    setTimeout(() => {
-                        setHighlightedRow(null);
-                    }, 3000); // Выделение будет длиться 3 секунды
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    scrollToRow(row);
                 }
             });
         });
+
+        setSearchQuery('');
     };
 
     const handleInputChange = (e) => {
@@ -52,6 +130,46 @@ const FaqLiving = () => {
             handleSearch();
         }
     };
+
+    const handleScroll = () => {
+        const rows = document.querySelectorAll('tbody tr');
+        const seventhRow = rows[6];
+
+        if (seventhRow) {
+            const seventhRowTop = seventhRow.offsetTop;
+            const windowHeight = window.innerHeight;
+            const scrolled = window.scrollY;
+
+            if (scrolled > seventhRowTop) {
+                setShowScrollToTop(true);
+            } else {
+                setShowScrollToTop(false);
+            }
+        }
+
+        const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (bottomSpacerTop <= windowHeight) {
+            setIsSticky(false);
+        } else {
+            setIsSticky(true);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <div className={'FaqLiving_wrapper'}>
@@ -66,16 +184,18 @@ const FaqLiving = () => {
                      alt="123"/>
             </div>
             <div className={'FaqLiving_text'}>
-            <div className="search-container">
-                    <input 
-                        type="text" 
-                        placeholder="Поиск по фамилии..." 
-                        value={searchQuery} 
-                        onChange={handleInputChange} 
-                        onKeyPress={handleKeyPress}
-                        className="search-input"
-                    />
-                    <Button onClick={handleSearch} className="search-button">Найти</Button>
+                <div className="search-container">
+                    <div className="search-input-container">
+                        <input 
+                            type="text" 
+                            placeholder="Поиск по фамилии..." 
+                            value={searchQuery} 
+                            onChange={handleInputChange} 
+                            onKeyPress={handleKeyPress}
+                            className="search-input"
+                        />
+                        <FaSearch className="search-icon" onClick={handleSearch} />
+                    </div>
                 </div>
                 <table>
                     <thead>
@@ -84,82 +204,21 @@ const FaqLiving = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    <tr className={highlightedRow === 1 ? 'highlighted' : ''}><td>1</td><td>Кушкин Алексей<br/>Пилосян Меликсет</td></tr>
-                    <tr className={highlightedRow === 2 ? 'highlighted' : ''}><td>2</td><td>Леваков Александр<br/>Егоров Александр</td></tr>
-                    <tr className={highlightedRow === 3 ? 'highlighted' : ''}><td>3</td><td>Елсаков Алексей<br/>Лапшин Артем</td></tr>
-                    <tr className={highlightedRow === 4 ? 'highlighted' : ''}><td>4</td><td>Тулина Мария<br/>Кабиева Диана</td></tr>
-                    <tr className={highlightedRow === 5 ? 'highlighted' : ''}><td>5</td><td>Баранов Иван<br/>Сморода Роман</td></tr>
-                    <tr className={highlightedRow === 6 ? 'highlighted' : ''}><td>6</td><td>Хромов Роман<br/>Ахметвалеев Артур</td></tr>
-                    <tr className={highlightedRow === 7 ? 'highlighted' : ''}><td>7</td><td>Полянская Светлана<br/>Шичкина Екатерина</td></tr>
-                    <tr className={highlightedRow === 8 ? 'highlighted' : ''}><td>8</td><td>Шарова Кристина<br/>Познаева Лилит</td></tr>
-                    <tr className={highlightedRow === 9 ? 'highlighted' : ''}><td>9</td><td>Михеева Елена<br/>Красавина Виктория</td></tr>
-                    <tr className={highlightedRow === 10 ? 'highlighted' : ''}><td>10</td><td>Трошкина Екатерина<br/>Павлюк Сильвия</td></tr>
-                        <tr className={highlightedRow === 11 ? 'highlighted' : ''}><td>11</td><td>Костерина Дарья<br/>Сидорова Анастасия</td></tr>
-                        <tr className={highlightedRow === 12 ? 'highlighted' : ''}><td>12</td><td>Тугузов Роман<br/>Нурмуханов Аят</td></tr>
-                        <tr className={highlightedRow === 13 ? 'highlighted' : ''}><td>13</td><td>Власов Иван<br/>Ярмухамедов Тимур</td></tr>
-                        <tr className={highlightedRow === 14 ? 'highlighted' : ''}><td>14</td><td>Мильниченко Анастасия<br/>Прудникова Светлана</td></tr>
-                        <tr className={highlightedRow === 15 ? 'highlighted' : ''}><td>15</td><td>Лепская Екатерина<br/>Болдырева Алия</td></tr>
-                        <tr className={highlightedRow === 16 ? 'highlighted' : ''}><td>16</td><td>Дударева Оксана<br/>Пескова Елизавета</td></tr>
-                        <tr className={highlightedRow === 17 ? 'highlighted' : ''}><td>17</td><td>Лебедев Дмитрий<br/>Бабушкин Михаил</td></tr>
-                        <tr className={highlightedRow === 18 ? 'highlighted' : ''}><td>18</td><td>Юсипов Дмитрий<br/>Еремин Станислав</td></tr>
-                        <tr className={highlightedRow === 19 ? 'highlighted' : ''}><td>19</td><td>Муза Юрий<br/>Василенко Максим</td></tr>
-                        <tr className={highlightedRow === 20 ? 'highlighted' : ''}><td>20</td><td>Артемова Мария<br/>Молдаванова Олеся</td></tr>
-                        <tr className={highlightedRow === 21 ? 'highlighted' : ''}><td>21</td><td>Корнеева Елена<br/>Синёва Евгения</td></tr>
-                        <tr className={highlightedRow === 22 ? 'highlighted' : ''}><td>22</td><td>Прокофьева Виктория<br/>Кокорская Ирина</td></tr>
-                        <tr className={highlightedRow === 23 ? 'highlighted' : ''}><td>23</td><td>Войнов Роман<br/>Алиев Рифгат</td></tr>
-                        <tr className={highlightedRow === 24 ? 'highlighted' : ''}><td>24</td><td>Горбунова Ольга<br/>Нурмуханова Айгуль</td></tr>
-                        <tr className={highlightedRow === 25 ? 'highlighted' : ''}><td>25</td><td>Павлова Анастасия<br/>Лукина Замира</td></tr>
-                        <tr className={highlightedRow === 26 ? 'highlighted' : ''}><td>26</td><td>Дмитриева Лариса<br/>Кававина Любовь</td></tr>
-                        <tr><td>27</td><td>Гулямов Фархад<br/>Жабинский Михаил</td></tr>
-                        <tr><td>28</td><td>Юсупова Кристина<br/>Денисова Анна</td></tr>
-                        <tr><td>29</td><td>Власова Анна<br/>Салихова Анна</td></tr>
-                        <tr><td>30</td><td>Пряхина Надежда<br/>Васенева Катрина</td></tr>
-                        <tr><td>31</td><td>Железова Людмила<br/>Танделова Диана</td></tr>
-                        <tr><td>32</td><td>Мальцева Ирина<br/>Трифонова Екатерина</td></tr>
-                        <tr><td>33</td><td>Орлова Оксана<br/>Савченко Елена</td></tr>
-                        <tr><td>34</td><td>Бурыкина Анастасия<br/>Садовская Екатерина</td></tr>
-                        <tr><td>35</td><td>Виноградова Екатерина<br/>Григорян Наталья</td></tr>
-                        <tr><td>36</td><td>Антипанова Серафима<br/>Шелудякова Виктория</td></tr>
-                        <tr><td>37</td><td>Джафарова Камила<br/>Смельцова Ксения</td></tr>
-                        <tr><td>38</td><td>Савельева Анна<br/>Языкова Елена</td></tr>
-                        <tr><td>39</td><td>Мишкевич Эдуард<br/>Дёмин Владислав</td></tr>
-                        <tr><td>40</td><td>Фионина Ольга<br/>Маклакова Олеся</td></tr>
-                        <tr><td>41</td><td>Мокрова Анастасия<br/>Маркелова Арина</td></tr>
-                        <tr><td>42</td><td>Копылов Максим<br/>Костенко Никита</td></tr>
-                        <tr><td>43</td><td>Заботкина Виктория<br/>Корнилова Екатерина</td></tr>
-                        <tr><td>44</td><td>Николаева Светлана<br/>Тункина Елена</td></tr>
-                        <tr><td>45</td><td>Подрезов Никита<br/>Сорокин Юрий</td></tr>
-                        <tr><td>46</td><td>Виноградова Валентина<br/>Владыкина Диана</td></tr>
-                        <tr><td>47</td><td>Горельков Александр<br/>Щукин Александр</td></tr>
-                        <tr><td>48</td><td>Волкова Елена<br/>Подлегаева Дарья</td></tr>
-                        <tr><td>49</td><td>Столярова Софья<br/>Маслакова Инна</td></tr>
-                        <tr><td>50</td><td>Ильин Артем<br/>Гусейнов Рауф</td></tr>
-                        <tr><td>51</td><td>Минухина Евгения<br/>Климова Ольга</td></tr>
-                        <tr><td>52</td><td>Дауткулова Майя<br/>Калинина Лилия</td></tr>
-                        <tr><td>53</td><td>Демьянова Анастасия<br/>Мезей Алёна</td></tr>
-                        <tr><td>54</td><td>Андриянова Анастасия<br/>Анисимова Марина</td></tr>
-                        <tr><td>55</td><td>Шеменков Александр<br/>Затрутин Кирилл<br/>Беликов Никита</td></tr>
-                        <tr><td>56</td><td>Бондарева Юлия<br/>Лазутина Ирина<br/>Мохова Галина</td></tr>
-                        <tr><td>57</td><td>Прокофьева Мария<br/>Круглова Юлия</td></tr>
-                        <tr><td>58</td><td>Чистяков Даниил<br/>Шатилов Николай<br/>Юдин Сергей</td></tr>
-                        <tr><td>59</td><td>Гужвина Наталья<br/>Уханова Оксана<br/>Королева Ольга</td></tr>
-                        <tr><td>60</td><td>Галузина Тамара<br/>Пугачева Алла<br/>Новикова Нина</td></tr>
-                        <tr><td>61</td><td>Шакирова Анна<br/>Пирогова Нина<br/>Канаева Мария</td></tr>
-                        <tr><td>62</td><td>Павлова Дарья<br/>Бабина Светлана<br/>Митина Елена</td></tr>
-                        <tr><td>63</td><td>Кондраков Кирилл<br/>Забежайлов Максим<br/>Захаревич Александр</td></tr>
-                        <tr><td>64</td><td>Уткина Анна<br/>Чернышова Елена<br/>Гаврилова Светлана</td></tr>
-                        <tr><td>65</td><td>Алышев Максим<br/>Куликов Максим<br/>Романов Иван</td></tr>
-                        <tr><td>66</td><td>Белова Ирина<br/>Мясникова Елена<br/>Касаткина Екатерина</td></tr>
-                        <tr><td>67</td><td>Максакова Ольга<br/>Смирнова Анна<br/>Зайцева Юлия</td></tr>
-                        <tr><td>68</td><td>Базина Ольга<br/>Красавина Галина</td></tr>
-                        <tr><td>69</td><td>Лаптев Евгений<br/>Ситцов Евгений<br/>Кузин Михаил</td></tr>
-                        <tr><td>70</td><td>Матвеев Евгений<br/>Доброхотов Леонид<br/>Герасимов Владислав</td></tr>
-                        <tr><td>71</td><td>Пахарев Егор<br/>Павлов Андрей<br/>Попов Илья</td></tr>
-                        <tr><td>72</td><td>Масленникова Алина<br/>Александра Лукина<br/>Анна Михеева<br/>Васина Елизавета<br/>Васина Анастасия</td></tr>
-                        <tr><td>73</td><td>Селезнева Екатерина<br/>Вилонина Юлия</td></tr>
-                        <tr><td>74</td><td>Евдокимов Илья<br/>Вишняков Антон<br/>Михалёв Ярослав<br/>Романов Роман</td></tr>
+                        {guestData.map((guest, index) => (
+                            <tr key={guest.id}>
+                                <td>{guest.id}</td>
+                                <td>
+                                    {guest.names.map((name, idx) => (
+                                        <div key={idx}>{name}</div>
+                                    ))}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
+                <div className={`scroll-to-top ${showScrollToTop ? 'show' : ''}`} onClick={scrollToTop}>
+                    <img src="/assets/arrow-up.svg" alt="Scroll to Top" />
+                </div>
                 <div className={isSticky ? 'sticky-button' : 'normal-button'}>
                     <Link to='/faq'>
                         <Button className={'primary-button'}>Назад</Button>
