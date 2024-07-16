@@ -142,3 +142,12 @@ table {
     height: auto;
     opacity: .7;
 }
+
+.highlighted {
+    background-color: #82D7E1;
+    transition: background-color 1s ease;
+}
+
+tbody tr {
+    transition: background-color 1s ease;
+}

@@ -6,13 +6,12 @@ import { FaSearch } from 'react-icons/fa'; // Импортируем иконк�
 
 const FaqLiving = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [highlightedRowId, setHighlightedRowId] = useState(null); // Initialize highlightedRowId with null
+    const [highlightedRow, setHighlightedRow] = useState(null); // Изменяем состояние на хранение ID строки
     const bottomSpacerRef = useRef(null);
     const [isSticky, setIsSticky] = useState(true);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
     const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
     const inputRef = useRef(null); // Ref для поля ввода
-
 
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
@@ -95,7 +94,7 @@ const FaqLiving = () => {
     ];
 
 
-    const scrollToRow = (row) => {
+     const scrollToRow = (row) => {
         if (row) {
             const rowTop = row.offsetTop;
             const rowHeight = row.offsetHeight;
@@ -123,7 +122,11 @@ const FaqLiving = () => {
             names.forEach(nameDiv => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    setHighlightedRowId(row.id); // Устанавливаем id строки для подсветки
+                    setHighlightedRow(row.getAttribute('data-id')); // Устанавливаем ID строки для подсветки
+                    setTimeout(() => {
+                        setHighlightedRow(null); // Через 3 секунды сбрасываем подсветку
+                    }, 3000);
+                    scrollToRow(row);
                     found = true;
                 }
             });
@@ -222,8 +225,8 @@ const FaqLiving = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {guestData.map((guest, index) => (
-                            <tr key={guest.id} id={guest.id} style={{ backgroundColor: highlightedRowId === guest.id ? '#82D7E1' : 'transparent' }}>
+                        {guestData.map((guest) => (
+                            <tr key={guest.id} data-id={guest.id} className={highlightedRow == guest.id ? 'highlighted' : ''}>
                                 <td>{guest.id}</td>
                                 <td>
                                     {guest.names.map((name, idx) => (
