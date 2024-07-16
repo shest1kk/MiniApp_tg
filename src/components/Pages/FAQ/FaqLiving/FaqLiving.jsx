@@ -8,7 +8,7 @@ const FaqLiving = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight;
+            const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - window.innerHeight;
             setIsSticky(!bottomOfWindow);
         };
 
@@ -116,8 +116,8 @@ const FaqLiving = () => {
             <Link to='/faq'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>
-            
         </div>
+        <div className="bottom-spacer"></div>
         </div>
             
         </div>

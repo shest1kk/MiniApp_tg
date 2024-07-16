@@ -57,11 +57,11 @@ table {
 }
 
 
-
+/* 
 .FaqLiving-button {
     margin-bottom: 20px;
     margin-top: 20px;
-}
+} */
 
 .sticky-button {
     position: fixed;
@@ -77,5 +77,9 @@ table {
     position: static;
     transform: none;
     margin-top: 20px;
-    margin-bottom: 20px;
+}
+
+/* Отступ внизу страницы */
+.bottom-spacer {
+    height: 40px; /* Достаточный отступ для кнопки */
 }
