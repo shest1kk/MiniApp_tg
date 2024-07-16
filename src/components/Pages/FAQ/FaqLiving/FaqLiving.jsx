@@ -104,25 +104,24 @@ const FaqLiving = () => {
             });
         }
     };
-
     const handleSearch = () => {
         const rows = document.querySelectorAll('tbody tr');
-
+    
         rows.forEach(row => {
             const names = row.cells[1].querySelectorAll('div');
-
+    
             names.forEach(nameDiv => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    scrollToRow(row);
+                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
         });
-
+    
         setSearchQuery('');
         inputRef.current.blur(); // Скрыть клавиатуру
     };
-
+    
     const handleInputChange = (e) => {
         setSearchQuery(e.target.value);
     };
