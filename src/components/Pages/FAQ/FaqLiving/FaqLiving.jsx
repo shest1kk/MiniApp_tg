@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './FaqLiving.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
 
 const FaqLiving = () => {
+    const [isSticky, setIsSticky] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight;
+            setIsSticky(!bottomOfWindow);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div className={'FaqLiving_wrapper'}>
         <div className={'FaqLiving_image'}>
@@ -97,7 +111,8 @@ const FaqLiving = () => {
     <tr><td>73</td><td>Селезнева Екатерина<br/>Вилонина Юлия</td></tr>
     <tr><td>74</td><td>Евдокимов Илья<br/>Вишняков Антон<br/>Михалёв Ярослав<br/>Романов Роман</td></tr>
 </table>
-<div className={'FaqLiving-button'}>
+<div className={isSticky ? 'sticky-button' : 'normal-button'}>
+{/* <div className={'FaqLiving-button'}> */}
             <Link to='/faq'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

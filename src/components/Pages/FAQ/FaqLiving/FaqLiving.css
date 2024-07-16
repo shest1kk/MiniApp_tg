@@ -62,3 +62,19 @@ table {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.sticky-button {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: position 0.3s, bottom 0.3s;
+}
+
+/* Стили для обычного положения кнопки */
+.normal-button {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+}
