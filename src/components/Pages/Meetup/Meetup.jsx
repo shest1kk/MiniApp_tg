@@ -18,17 +18,17 @@ const Meetup = () => {
             <span>Конференция</span>
             </div>
         <div className={'Meetup_categories'}>
-            <Link to='discussion'>
-            <Button className={'primary-button'}>Панельная дискуссия</Button>
-            </Link>
+            {/* <Link to='timing'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Тайминги</Button>
+            {/* </Link> */}
             {/* <Link to='speakers'> */}
             <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button>
             {/* </Link> */}
+            <Link to='discussion'>
+            <Button className={'primary-button'}>Панельная дискуссия</Button>
+            </Link>
             {/* <Link to='conception'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Концепция</Button>
-            {/* </Link> */}
-            {/* <Link to='timing'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Тайминги</Button>
+            {/* <Button onClick={handleClick} className={'primary-button'}>Концепция</Button> */}
             {/* </Link> */}
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>

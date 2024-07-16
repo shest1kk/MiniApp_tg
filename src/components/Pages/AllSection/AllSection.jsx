@@ -33,9 +33,9 @@ const AllSection = () => {
             <Link to='/meetup'>
             <Button className={'primary-button'}>Конференция</Button>
             </Link>
-            {/* <Link to='/feedback'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Обратная связь</Button>
-            {/* </Link> */}
+            <Link to='/feedback'>
+            <Button className={'primary-button'}>Обратная связь</Button>
+            </Link>
         
         </div>
         </div>
