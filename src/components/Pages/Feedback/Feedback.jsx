@@ -16,7 +16,7 @@ const Feedback = () => {
     <span>Обратная связь</span>
     </div>
       <div className={'Feedback_categories'}>
-        <a href="https://wa.me/79969184707">
+        <a href="https://wa.me/qr/3USACWH6VD2AD1">
           <Button className={'primary-button'}>Связь с организатором</Button>
         </a>
         <a href="https://forms.yandex.ru/cloud/66754735eb61465b7d472f3f/">
