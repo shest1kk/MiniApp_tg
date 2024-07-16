@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './FaqLiving.css';
 import Button from '../../../Buttons/Button';
 import { Link } from "react-router-dom";
 
 const FaqLiving = () => {
     const [isSticky, setIsSticky] = useState(true);
+    const bottomSpacerRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - window.innerHeight;
-            setIsSticky(!bottomOfWindow);
+            const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (bottomSpacerTop <= windowHeight) {
+                setIsSticky(false);
+            } else {
+                setIsSticky(true);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -17,6 +24,7 @@ const FaqLiving = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
 
     return (
         <div className={'FaqLiving_wrapper'}>
@@ -117,7 +125,7 @@ const FaqLiving = () => {
             <Button className={'primary-button'}>Назад</Button>
             </Link>
         </div>
-        <div className="bottom-spacer"></div>
+        <div className="bottom-spacer" ref={bottomSpacerRef}></div>
         </div>
             
         </div>

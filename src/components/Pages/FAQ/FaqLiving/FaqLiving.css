@@ -65,7 +65,7 @@ table {
 
 .sticky-button {
     position: fixed;
-    bottom: 10px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -81,5 +81,5 @@ table {
 
 /* Отступ внизу страницы */
 .bottom-spacer {
-    height: 40px; /* Достаточный отступ для кнопки */
+    height: 80px; /* Достаточный отступ для кнопки */
 }
