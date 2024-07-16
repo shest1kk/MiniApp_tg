@@ -124,7 +124,6 @@ const FaqLiving = () => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
                     setHighlightedRowId(row.id); // Устанавливаем id строки для подсветки
-                    scrollToRow(row);
                     found = true;
                 }
             });
