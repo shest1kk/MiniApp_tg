@@ -12,7 +12,6 @@ const FaqLiving = () => {
     const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
     const inputRef = useRef(null); // Ref для поля ввода
 
-
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
         { id: 2, names: ["Кушкин Алексей", "Пилосян Меликсет"] },
@@ -106,7 +105,9 @@ const FaqLiving = () => {
                 behavior: 'smooth'
             });
 
-            setShowBackButton(true); // Показываем кнопку "Назад" после прокрутки
+            setTimeout(() => {
+                setShowBackButton(true); // Показываем кнопку "Назад" с задержкой
+            }, 1000); // Задержка в 1000 миллисекунд (1 секунда)
         }
     };
 
@@ -129,6 +130,7 @@ const FaqLiving = () => {
         setSearchQuery('');
         inputRef.current.blur(); // Скрыть клавиатуру
 
+        setShowBackButton(false); // Скрываем кнопку "Назад" при начале поиска
         if (!found) {
             setShowBackButton(true); // Показываем кнопку "Назад", если результаты поиска не найдены
         }
