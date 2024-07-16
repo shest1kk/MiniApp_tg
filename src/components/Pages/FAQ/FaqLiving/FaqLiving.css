@@ -83,3 +83,32 @@ table {
 .bottom-spacer {
     height: 80px; /* Достаточный отступ для кнопки */
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.search-button {
+    padding: 10px 20px;
+}
+
+.highlighted {
+    background-color: yellow; /* Цвет выделения */
+    animation: highlight 3s ease; /* Анимация выделения на 3 секунды */
+}
+
+@keyframes highlight {
+    0% { background-color: yellow; }
+    50% { background-color: transparent; }
+    100% { background-color: yellow; }
+}
