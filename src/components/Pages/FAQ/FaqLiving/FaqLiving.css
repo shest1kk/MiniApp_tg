@@ -145,9 +145,10 @@ table {
 
 .highlighted {
     background-color: #82D7E1;
-    transition: background-color 1s ease;
+    scale: 1.1;
+    transition: scale 1s ease, background-color 1s ease;
 }
 
 tbody tr {
-    transition: background-color 1s ease;
+    transition: scale 1s ease, background-color 1s ease;
 }
