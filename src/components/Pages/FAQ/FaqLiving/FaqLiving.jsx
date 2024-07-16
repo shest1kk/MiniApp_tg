@@ -226,11 +226,11 @@ const FaqLiving = () => {
                     </thead>
                     <tbody>
                         {guestData.map((guest, index) => (
-                            <tr key={guest.id}>
+                            <tr key={guest.id} id={guest.id} style={{ backgroundColor: highlightedRowId === guest.id ? '#82D7E1' : 'transparent' }}>
                                 <td>{guest.id}</td>
                                 <td>
                                     {guest.names.map((name, idx) => (
-                                        <div key={idx} style={{ color: highlightedName === name ? 'red' : 'black' }}>{name}</div>
+                                        <div key={idx}>{name}</div>
                                     ))}
                                 </td>
                             </tr>
