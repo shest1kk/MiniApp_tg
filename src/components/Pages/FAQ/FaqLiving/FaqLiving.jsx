@@ -6,6 +6,7 @@ import { FaSearch } from 'react-icons/fa'; // Импортируем иконк�
 
 const FaqLiving = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [highlightedName, setHighlightedName] = useState('');
     const bottomSpacerRef = useRef(null);
     const [isSticky, setIsSticky] = useState(true);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -93,7 +94,7 @@ const FaqLiving = () => {
     ];
 
 
-    const scrollToRow = (row) => {
+ const scrollToRow = (row) => {
         if (row) {
             const rowTop = row.offsetTop;
             const rowHeight = row.offsetHeight;
@@ -121,6 +122,10 @@ const FaqLiving = () => {
             names.forEach(nameDiv => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
+                    setHighlightedName(name); // Устанавливаем фамилию для подсветки
+                    setTimeout(() => {
+                        setHighlightedName(''); // Через 3 секунды сбрасываем подсветку
+                    }, 3000);
                     scrollToRow(row);
                     found = true;
                 }
@@ -225,7 +230,7 @@ const FaqLiving = () => {
                                 <td>{guest.id}</td>
                                 <td>
                                     {guest.names.map((name, idx) => (
-                                        <div key={idx}>{name}</div>
+                                        <div key={idx} style={{ color: highlightedName === name ? 'red' : 'black' }}>{name}</div>
                                     ))}
                                 </td>
                             </tr>
