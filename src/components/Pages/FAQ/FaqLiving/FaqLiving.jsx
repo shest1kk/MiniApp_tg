@@ -9,7 +9,8 @@ const FaqLiving = () => {
     const bottomSpacerRef = useRef(null);
     const [isSticky, setIsSticky] = useState(true);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
-    const inputRef = useRef(null); // Референс на input
+    const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
+    const inputRef = useRef(null); // Ref для поля ввода
 
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
@@ -102,26 +103,30 @@ const FaqLiving = () => {
                 top: scrollToPosition,
                 behavior: 'smooth'
             });
+
+            setShowBackButton(true); // Показываем кнопку "Назад" после прокрутки
         }
     };
+
     const handleSearch = () => {
         const rows = document.querySelectorAll('tbody tr');
-    
+
         rows.forEach(row => {
             const names = row.cells[1].querySelectorAll('div');
-    
+
             names.forEach(nameDiv => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    scrollToRow(row);
+                    setShowBackButton(false); // Скрываем кнопку "Назад" при начале поиска
                 }
             });
         });
-    
+
         setSearchQuery('');
         inputRef.current.blur(); // Скрыть клавиатуру
     };
-    
+
     const handleInputChange = (e) => {
         setSearchQuery(e.target.value);
     };
@@ -194,7 +199,7 @@ const FaqLiving = () => {
                             onChange={handleInputChange} 
                             onKeyPress={handleKeyPress}
                             className="search-input"
-                            ref={inputRef} // Привязываем референс
+                            ref={inputRef} // Присваиваем ref
                         />
                         <FaSearch className="search-icon" onClick={handleSearch} />
                     </div>
@@ -222,9 +227,11 @@ const FaqLiving = () => {
                     <img src="/assets/arrow-up.svg" alt="Scroll to Top" />
                 </div>
                 <div className={isSticky ? 'sticky-button' : 'normal-button'}>
-                    <Link to='/faq'>
-                        <Button className={'primary-button'}>Назад</Button>
-                    </Link>
+                    {showBackButton && (
+                        <Link to='/faq'>
+                            <Button className={'primary-button'}>Назад</Button>
+                        </Link>
+                    )}
                 </div>
                 <div className="bottom-spacer" ref={bottomSpacerRef}></div>
             </div>
