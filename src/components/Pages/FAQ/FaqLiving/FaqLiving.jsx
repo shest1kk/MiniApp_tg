@@ -12,6 +12,7 @@ const FaqLiving = () => {
     const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
     const inputRef = useRef(null); // Ref для поля ввода
 
+
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
         { id: 2, names: ["Кушкин Алексей", "Пилосян Меликсет"] },
@@ -92,6 +93,7 @@ const FaqLiving = () => {
 
     ];
 
+
     const scrollToRow = (row) => {
         if (row) {
             const rowTop = row.offsetTop;
@@ -110,6 +112,7 @@ const FaqLiving = () => {
 
     const handleSearch = () => {
         const rows = document.querySelectorAll('tbody tr');
+        let found = false; // Флаг для проверки наличия результатов поиска
 
         rows.forEach(row => {
             const names = row.cells[1].querySelectorAll('div');
@@ -118,13 +121,17 @@ const FaqLiving = () => {
                 const name = nameDiv.innerText;
                 if (name.toLowerCase().includes(searchQuery.toLowerCase())) {
                     scrollToRow(row);
-                    setShowBackButton(false); // Скрываем кнопку "Назад" при начале поиска
+                    found = true;
                 }
             });
         });
 
         setSearchQuery('');
         inputRef.current.blur(); // Скрыть клавиатуру
+
+        if (!found) {
+            setShowBackButton(true); // Показываем кнопку "Назад", если результаты поиска не найдены
+        }
     };
 
     const handleInputChange = (e) => {
