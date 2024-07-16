@@ -9,6 +9,7 @@ const FaqLiving = () => {
     const bottomSpacerRef = useRef(null);
     const [isSticky, setIsSticky] = useState(true);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
+    const inputRef = useRef(null); // Референс на input
 
     const guestData = [
         { id: 1, names: ["Базина Ольга", "Красавина Галина"] },
@@ -119,6 +120,7 @@ const FaqLiving = () => {
         });
 
         setSearchQuery('');
+        inputRef.current.blur(); // Скрыть клавиатуру
     };
 
     const handleInputChange = (e) => {
@@ -193,6 +195,7 @@ const FaqLiving = () => {
                             onChange={handleInputChange} 
                             onKeyPress={handleKeyPress}
                             className="search-input"
+                            ref={inputRef} // Привязываем референс
                         />
                         <FaSearch className="search-icon" onClick={handleSearch} />
                     </div>
