@@ -36,7 +36,7 @@ const AppRoutes = () => {
           <Route path="/meetup/conception" element={<MeetupConceptionWithAnimation />} />
           <Route path="/meetup/discussion" element={<MeetupDiscussionWithAnimation />} />
           <Route path="/meetup/speakers" element={<MeetupSpeakersWithAnimation />} />
-          <Route path="/meetup/timing" element={<MeetupTimingWithAnimation />} />
+          <Route path="/meetup/timing" element={<MeetupTiming />} />
           <Route path="/feedback" element={<FeedbackWithAnimation />} />
         </Routes>
       </Router>
