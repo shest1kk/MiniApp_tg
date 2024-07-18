@@ -19,10 +19,10 @@ const Meetup = () => {
             </div>
         <div className={'Meetup_categories'}>
             {/* <Link to='timing'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Тайминги</Button>
+            <Button onClick={handleClick} className={'primary-button'}>AGENDA</Button>
             {/* </Link> */}
             {/* <Link to='speakers'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button>
+            {/* <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button> */}
             {/* </Link> */}
             <Link to='discussion'>
             <Button className={'primary-button'}>Панельная дискуссия</Button>

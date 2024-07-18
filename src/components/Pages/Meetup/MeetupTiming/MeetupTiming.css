@@ -341,3 +341,24 @@ table {
     font-style: normal;
     font-size: 16px;
 }
+
+.sticky-button {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: position 0.3s, bottom 0.3s;
+}
+
+/* Стили для обычного положения кнопки */
+.normal-button {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+}
+
+/* Отступ внизу страницы */
+.bottom-spacer {
+    height: 80px; /* Достаточный отступ для кнопки */
+}

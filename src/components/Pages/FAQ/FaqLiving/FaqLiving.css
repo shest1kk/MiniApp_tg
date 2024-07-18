@@ -71,7 +71,7 @@
     margin-top: 20px;
 } */
 
-.sticky-button {
+.FaqLiving_text .sticky-button {
     position: fixed;
     bottom: 25px;
     left: 50%;
@@ -81,7 +81,7 @@
 }
 
 /* Стили для обычного положения кнопки */
-.normal-button {
+.FaqLiving_text .normal-button {
     position: static;
     transform: none;
     margin-top: 20px;

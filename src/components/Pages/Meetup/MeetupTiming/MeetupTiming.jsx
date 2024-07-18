@@ -1,12 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./MeetupTiming.css";
 import Button from "../../../Buttons/Button";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const MeetupTiming = () => {
+    alert('Чтобы узнать подробнее про спикеров - просто нажмите на них :)');
   const [currentDay, setCurrentDay] = useState(1);
   const [modalData, setModalData] = useState(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const bottomSpacerRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(true);
+  const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
+
+  const handleScroll = () => {
+    const rows = document.querySelectorAll('tbody tr');
+    const seventhRow = rows[1];
+
+    if (seventhRow) {
+        const seventhRowTop = seventhRow.offsetTop;
+        const windowHeight = window.innerHeight;
+        const scrolled = window.scrollY;
+
+        if (scrolled > seventhRowTop) {
+            setShowScrollToTop(true);
+        } else {
+            setShowScrollToTop(false);
+        }
+    }
+
+    const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (bottomSpacerTop <= windowHeight) {
+        setIsSticky(false);
+    } else {
+        setIsSticky(true);
+    }
+};
+
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
+useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
 
   const timingDataDay1 = [
     {
@@ -15,8 +60,8 @@ const MeetupTiming = () => {
       topic:
         "\nИнтро<hr>Почему Эй Кей лучше, чем другие.<hr>Чем похожи <u>ЭЙ</u> Кей и <u>ЭЙ</u>нштейн?\n\n",
       speakers: [
-        { id: 101, name: "Чижов Алексей" },
-        { id: 102, name: "Ткачева Светлана" },
+        { id: 101, name: "\nЧижов Алексей\n\n" },
+        { id: 102, name: "\nТкачева Светлана\n\n" },
       ],
     },
     {
@@ -25,8 +70,8 @@ const MeetupTiming = () => {
       topic:
         "\nPROMO - Как расти дальше?<hr>Простых решений больше нет.<hr>БОНУС\n↓↓↓\n\nФин Дир расскажет, куда тратятся деньги, которые мы зарабатываем.\n\n",
       speakers: [
-        { id: 103, name: "Антипанова Серафима" },
-        { id: 104, name: "Кудряшов Дмитрий" },
+        { id: 103, name: "\nАнтипанова Серафима\n\n" },
+        { id: 104, name: "\nКудряшов Дмитрий\n\n" },
       ],
     },
     {
@@ -56,8 +101,8 @@ const MeetupTiming = () => {
         time: "16:05",
         topic: "\nНевероятная Астрахань: как все время расти в ТО против тренда.\n\n",
         speakers: [
-            { id: 107, name: "Лепская Екатерина"},
-            { id: 108, name: "Болдырева Алия"}
+            { id: 107, name: "\nЛепская Екатерина\n\n"},
+            { id: 108, name: "\nБолдырева Алия\n\n"}
         ],
       },
       {
@@ -65,8 +110,8 @@ const MeetupTiming = () => {
         time: "16:25",
         topic: "\nКак небольшие и простые идеи могут давать хороший результат.<hr>Делай, что можешь, для своих людей.<hr>Укрепление HR бренда в г. Рязань.\n\n",
         speakers: [
-            { id: 109, name: "Мария Прокофьева"},
-            { id: 110, name: "Михеева Елена"}
+            { id: 109, name: "\nМария Прокофьева\n\n"},
+            { id: 110, name: "\n\nМихеева Елена\n\n"}
         ],
       },
       {
@@ -82,8 +127,8 @@ const MeetupTiming = () => {
         time: "17:15",
         topic: "\nУспешные практики в г. Ярославль.\n\n",
         speakers: [
-            { id: 112, name: "Виноградова Валентина"},
-            { id: 113, name: "Баранов Иван"}
+            { id: 112, name: "\nВиноградова Валентина\n\n"},
+            { id: 113, name: "\nБаранов Иван\n\n"}
         ],
       },
       {
@@ -123,23 +168,153 @@ const MeetupTiming = () => {
 
   const timingDataDay2 = [
     {
-      id: 4,
+      id: 14,
       time: "10:00",
-      topic: "HR  + People",
-      speakers: [{ id: 5, name: "Григорян Наталья" }],
+      topic: "HR  + People.",
+      speakers: [
+        { id: 116, name: "\nHR\n\n" },
+        { id: 117, name: "\nГригорян Наталья\n\n"}
+      ],
     },
     {
-      id: 5,
+      id: 15,
       time: "11:30",
       topic: "Перерыв",
       speakers: [],
     },
     {
-      id: 6,
+      id: 16,
       time: "11:40",
       topic: "Квиз",
       speakers: [],
     },
+    {
+        id: 17,
+        time: "11:55",
+        topic: "\nВступление маркета Кравченко.\nВопреки…\n\n",
+        speakers: [
+            { id: 118, name: "\nКравченко Ксения\n\n" },
+        ],
+      },
+      {
+        id: 18,
+        time: "12:05",
+        topic: "\nВопреки внешним обстоятельств.\n\n",
+        speakers: [
+            { id: 119, name: "\nЕгоров Александр" },
+            { id: 120, name: "\nДёмин Владислав" },
+            { id: 121, name: "\nФионина Ольга\n\n" },
+        ],
+      },
+      {
+        id: 19,
+        time: "12:25",
+        topic: "\nВопреки рынку труда.\n\n",
+        speakers: [
+            { id: 122, name: "\nБурыкина Анастасия\n\n" },
+            { id: 123, name: "\nЮдин Сергей\n\n" },
+            { id: 124, name: "\nПодлегаева Дарья\n\n" },
+            { id: 125, name: "\nЛеваков Александр\n\n"}
+        ],
+      },
+      {
+        id: 20,
+        time: "12:55",
+        topic: "\nВопреки комфорту\n\n<hr>\nЛичная история развития от Директора до ВТУ.\n\n",
+        speakers: [
+            { id: 126, name: "\nМальцева Ирина\n\n" },
+        ],
+      },
+      {
+        id: 21,
+        time: "13:10",
+        topic: "\nВопрекия установкам.<hr>Аналитика в Product.\n\n",
+        speakers: [
+            { id: 127, name: "\nГорельков Александр\n\n" },
+        ],
+      },
+      {
+        id: 22,
+        time: "13:25",
+        topic: "\nВопреки ручного труда<hr>Автоматизация профиля ресторана.\n\n",
+        speakers: [
+            { id: 128, name: "\nКававина Любовь\n\n" },
+        ],
+      },
+      {
+        id: 23,
+        time: "13:40",
+        topic: "\nОбед\n\n",
+        speakers: [
+
+        ],
+      },
+      {
+        id: 24,
+        time: "14:40",
+        topic: "\nКак я нахожу себе проблемы и решаю их на пользу всем. :)<hr>Сломанные преграды в доставке и COL.\n\n",
+        speakers: [
+            { id: 129, name: "\nВиноградова Екатерина\n\n" },
+        ],
+      },
+      {
+        id: 25,
+        time: "15:00",
+        topic: "\nХотели шоу? Будет шоу!!!!\n\n<hr>\nВыступление команды QA\n\n",
+        speakers: [
+            { id: 130, name: "\nЕвдокимов Илья\n\n" },
+            { id: 131, name: "\nВишняков Антон\n\n" },
+        ],
+      },
+      {
+        id: 26,
+        time: "15:30",
+        topic: "\nКак у меня дела?\n\n",
+        speakers: [
+            { id: 132, name: "\nФедорова Татьяна\n\n" },
+        ],
+      },
+      {
+        id: 27,
+        time: "15:50",
+        topic: "\nБудущее Эй Кей.<hr>Хотим менять, а не меняться.\n\n",
+        speakers: [
+            { id: 133, name: "\nЧижов Алексей\n\n" },
+        ],
+      },
+      {
+        id: 28,
+        time: "16:50",
+        topic: "\nПерерыв\n\n",
+        speakers: [
+
+        ],
+      },
+      {
+        id: 29,
+        time: "17:00",
+        topic: "\nПанельная дискуссия\n\n",
+        speakers: [
+            {id: 134, name: "LT"}
+        ],
+      },
+      {
+        id: 30,
+        time: "17:30",
+        topic: "\nОкончание конференции\n\n",
+        speakers: [
+
+        ],
+      },
+      {
+        id: 31,
+        time: "19:30",
+        topic: "\nГала-ужин\n\n",
+        speakers: [
+
+        ],
+      },
+
     // Add more entries as needed
   ];
 
@@ -234,6 +409,114 @@ const MeetupTiming = () => {
         image: "/assets/10.png",
         text: 'Иван Кунаков покажет, как важно следить за развитием технологий в нашем Бизнесе, расскажет про собственные инновационные проекты в Эй\nКей.\nА так же покажет, как искуственный интелект может помочь в рутине директора.',
       },
+      116: {
+        id: 116,
+        name: "HR",
+        image: "/assets/11.png",
+        text: 'Выступление HR директора, Руководителя отдела подбора, Корп.культура, Лидер PEOPLE и серкретный гость.',
+      },
+      117: {
+        id: 117,
+        name: "Григорян Наталья",
+        image: "/assets/12.png",
+        text: 'Выступление HR директора, Руководителя отдела подбора, Корп.культура, Лидер PEOPLE и серкретный гость.',
+      },
+      118: {
+        id: 118,
+        name: "Кравченко Ксения",
+        image: "/assets/13.png",
+        text: 'Ксения Кравченко и команда расскажут про нестандартный подход, про то, как можно и нужно ломать барьеры, нестандартно мыслить и действовать вопреки реалиям.',
+      },
+      119: {
+        id: 119,
+        name: "Егоров Александр",
+        image: "/assets/14.png",
+        text: 'Александр Егоров, Владислав Дёмин и Ольга Фионина поделятся своим опытом работы в нестандартных ситуациях, когда невозможно заглянуть в инструкцию и найти там ответ.<hr>Как неординарные решения влияют на бизнес.',
+      },
+      120: {
+        id: 120,
+        name: "Дёмин Владислав",
+        image: "/assets/14.png",
+        text: 'Александр Егоров, Владислав Дёмин и Ольга Фионина поделятся своим опытом работы в нестандартных ситуациях, когда невозможно заглянуть в инструкцию и найти там ответ.<hr>Как неординарные решения влияют на бизнес.',
+      },
+      121: {
+        id: 121,
+        name: "Фионина Ольга",
+        image: "/assets/14.png",
+        text: 'Александр Егоров, Владислав Дёмин и Ольга Фионина поделятся своим опытом работы в нестандартных ситуациях, когда невозможно заглянуть в инструкцию и найти там ответ.<hr>Как неординарные решения влияют на бизнес.',
+      },
+      122: {
+        id: 122,
+        name: "Бурыкина Анастасия",
+        image: "/assets/15.png",
+        text: 'Команда People Маркета, Сергей Юдин, Анастасия Бурыкина и Дарья Подлегаева расскажут, что делать в условиях падения рынка труда?<hr>Чем мотивировать и делать сотрудников счастливее.<hr>И как одна маленькая идея стала основным направлением HR Бренда Компании. ',
+      },
+      123: {
+        id: 123,
+        name: "Юдин Сергей",
+        image: "/assets/15.png",
+        text: 'Команда People Маркета, Сергей Юдин, Анастасия Бурыкина и Дарья Подлегаева расскажут, что делать в условиях падения рынка труда?<hr>Чем мотивировать и делать сотрудников счастливее.<hr>И как одна маленькая идея стала основным направлением HR Бренда Компании. ',
+      },
+      124: {
+        id: 124,
+        name: "Подлегаева Дарья",
+        image: "/assets/15.png",
+        text: 'Команда People Маркета, Сергей Юдин, Анастасия Бурыкина и Дарья Подлегаева расскажут, что делать в условиях падения рынка труда?<hr>Чем мотивировать и делать сотрудников счастливее.<hr>И как одна маленькая идея стала основным направлением HR Бренда Компании. ',
+      },
+      125: {
+        id: 125,
+        name: "Лекаков Александр",
+        image: "/assets/15.png",
+        text: 'Команда People Маркета, Сергей Юдин, Анастасия Бурыкина и Дарья Подлегаева расскажут, что делать в условиях падения рынка труда?<hr>Чем мотивировать и делать сотрудников счастливее.<hr>И как одна маленькая идея стала основным направлением HR Бренда Компании. ',
+      },
+      126: {
+        id: 126,
+        name: "Мальцева Ирина",
+        image: "/assets/16.png",
+        text: 'Ведущий территориальный управляющий, Ирина Мальцева, поделится, как строился ее рост в Компании, какой перед ней стоял выбор.',
+      },
+      127: {
+        id: 127,
+        name: "Горельков Александр",
+        image: "/assets/17.png",
+        text: 'Александр Горельков, лидер Product, развеет устаявшееся мнение о том, что ресторану невозможно повлиять на нормативные списания.<hr>Как магия анализа и немного ИТ станет инструментом влияния на EBITDA.',
+      },
+      128: {
+        id: 128,
+        name: "Кававина Любовь",
+        image: "/assets/18.png",
+        text: 'Любовь Кававина расскажет, как автоматизация Профиля ресторана сократит время ручного труда директора на ХХ часов в год.',
+      },
+      129: {
+        id: 129,
+        name: "Виноградова Екатерина",
+        image: "/assets/19.png",
+        text: 'Катя Виноградова: "Как я нахожу проблемы и решаю их на благо всем".',
+      },
+      130: {
+        id: 130,
+        name: "Евдокимов Илья",
+        image: "/assets/20.png",
+        text: 'Илья Евдокимов и Антон Вишняков откровенно о Роспотребнадзоре, и чем наш QA отличается от других.',
+      },
+      131: {
+        id: 131,
+        name: "Вишняков Антон",
+        image: "/assets/20.png",
+        text: 'Илья Евдокимов и Антон Вишняков откровенно о Роспотребнадзоре, и чем наш QA отличается от других.',
+      },
+      132: {
+        id: 132,
+        name: "Федорова Татьяна",
+        image: "/assets/logo.svg",
+        text: 'Узнаете на конференции :)',
+      },
+      133: {
+        id: 133,
+        name: "Чижов Алексей",
+        image: "/assets/21.png",
+        text: 'Выступление Генерального директора.',
+      },
     // Add more entries as needed
   };
 
@@ -257,20 +540,21 @@ const MeetupTiming = () => {
       modalOverlay.classList.add("fadeOut");
     }
   };
+  const formatText = (text) => {
+    return text.replace(/\n/g, "<br/>").replace(/<hr>/g, "<hr>");
+  };
+  
   const formatSpeakers = (speakers) => {
     return speakers.map((speaker, index) => (
       <React.Fragment key={index}>
         {index > 0 && <hr />}
-        <div>
-          <a
-            // href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              openModal(speaker.id);
-            }}
-          >
-            {speaker.name}
-          </a>
+        <div
+          dangerouslySetInnerHTML={{ __html: formatText(speaker.name) }}
+          onClick={(e) => {
+            e.preventDefault();
+            openModal(speaker.id);
+          }}
+        >
         </div>
       </React.Fragment>
     ));
@@ -281,6 +565,7 @@ const MeetupTiming = () => {
       __html: topic.replace(/\n/g, "<br/>").replace(/<hr>/g, "<hr>"),
     };
   };
+
 
   let timingData;
   let dateLabel;
@@ -305,7 +590,7 @@ const MeetupTiming = () => {
           </div>
         </div>
       )}
-      <div className={"MeetupTiming_image"}>
+      {/* <div className={"MeetupTiming_image"}>
         <div className={"MeetupTiming_headerText"}>
           <img
             className={"MeetupTiming_headerText_img"}
@@ -318,7 +603,7 @@ const MeetupTiming = () => {
           src="/assets/logo.svg"
           alt="123"
         />
-      </div>
+      </div> */}
       <div className={"MeetupTiming_text"}>
         <div className="slider">
           {currentDay > 1 && (
@@ -357,11 +642,19 @@ const MeetupTiming = () => {
             </table>
           </div>
         )}
-        <Link to="/meetup">
-          <Button className={"primary-button"}>Назад</Button>
-        </Link>
+        <div className={`scroll-to-top ${showScrollToTop ? 'show' : ''}`} onClick={scrollToTop}>
+                    <img src="/assets/arrow-up.svg" alt="Scroll to Top" />
+                </div>
+        <div className={isSticky ? 'sticky-button' : 'normal-button'}>
+                    {showBackButton && (
+                        <Link to='/meetup'>
+                            <Button className={'primary-button'}>Назад</Button>
+                        </Link>
+                    )}
+                </div>
+                <div className="bottom-spacer" ref={bottomSpacerRef}></div>
+            </div>
       </div>
-    </div>
   );
 };
 
