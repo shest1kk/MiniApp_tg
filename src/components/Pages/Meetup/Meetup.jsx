@@ -18,9 +18,9 @@ const Meetup = () => {
             <span>Конференция</span>
             </div>
         <div className={'Meetup_categories'}>
-            <Link to='timing'>
+            {/* <Link to='timing'> */}
             <Button onClick={handleClick} className={'primary-button'}>Тайминги</Button>
-            </Link>
+            {/* </Link> */}
             {/* <Link to='speakers'> */}
             <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button>
             {/* </Link> */}
