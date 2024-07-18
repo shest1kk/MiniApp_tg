@@ -249,7 +249,7 @@ const MeetupTiming = () => {
     // Add a delay to ensure fadeOut animation completes before resetting modalData
     setTimeout(() => {
       setModalData(null);
-    }, 300); // Match animation duration in milliseconds
+    }, 700); // Match animation duration in milliseconds
 
     // Add fadeOut class to initiate fadeOut animation
     const modalOverlay = document.querySelector(".modal-overlay");

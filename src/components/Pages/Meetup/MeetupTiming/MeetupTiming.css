@@ -259,12 +259,12 @@ table {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: fadeIn 0.3s forwards; /* Анимация fadeIn для отображения */
+    animation: fadeIn 0.7s forwards; /* Анимация fadeIn для отображения */
 }
 
 .modal-overlay.fadeOut {
     animation-name: fadeOut; /* Заменяем на анимацию fadeOut для скрытия */
-    animation-duration: 0.3s; /* Длительность анимации */
+    animation-duration: 0.7s; /* Длительность анимации */
     animation-fill-mode: forwards; /* Задерживаем последний кадр анимации */
 }
 
