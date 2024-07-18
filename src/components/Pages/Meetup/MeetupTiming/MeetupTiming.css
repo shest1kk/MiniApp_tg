@@ -69,16 +69,24 @@
     width: 100vw;
 }
 
-.TeetupTiming_table {
+.MeetupTiming_table {
     padding: 1px;
 }
 
-th, td {
+.MeetupTiming_table th {
     border: 1px double #000;
             text-align: center; /* Горизонтальное центрирование */
             vertical-align: middle; /* Вертикальное центрирование */
-            /* height: 50px;
-            padding: 20px; */
+            height: 50px;
+            /* padding: 20px; */
+}
+
+.MeetupTiming_table td {
+    border: 1px double #000;
+    text-align: center; /* Горизонтальное центрирование */
+    vertical-align: middle; /* Вертикальное центрирование */
+    height: 50px;
+    padding: 1px;
 }
 
 

@@ -8,7 +8,7 @@ const MeetupTiming = () => {
     const [currentDay, setCurrentDay] = useState(1);
 
     const timingDataDay1 = [
-        { time: "14:30", topic: "Интро. Почему Эй Кей Лучше, чем другие. Чем похожи ЭЙ Кей и ЭЙнштейн?", speaker: "Чижов Алексей, Ткачева Светлана" },
+        { time: "14:30", topic: "Интро\nПочему Эй Кей Лучше, чем другие. Чем похожи ЭЙ Кей и ЭЙнштейн?", speaker: "Чижов Алексей, Ткачева Светлана" },
         { time: "15:00", topic: "PROMO - Как расти дальше? Простый решений больше нет. ***БОНУС. Фин Дир расскажет, куда тратятся деньги, которые мы зарабатываем.", speaker: "Антипанова Серафима, Кудряшов Дмитрий" },
         { time: "15:30", topic: "Перерыв", speaker: "" },
         { time: "15:35", topic: "Выступление Маркета Сушко", speaker: "Сушко Павел" },
@@ -55,6 +55,12 @@ const MeetupTiming = () => {
         dateLabel = "24.07";
     }
 
+    const formatSpeakers = (speakers) => {
+        return speakers.split(', ').map((speaker, index) => (
+            <div key={index}>{speaker}</div>
+        ));
+    };
+
     return (
         <div className={'MeetupTiming_wrapper'}>
             <div className={'MeetupTiming_image'}>
@@ -99,8 +105,8 @@ const MeetupTiming = () => {
                             {timingData.map((event, index) => (
                                 <tr key={index}>
                                     <td>{event.time}</td>
-                                    <td>{event.topic}</td>
-                                    <td>{event.speaker}</td>
+                                    <td>{event.topic.replace(/\\n/g, '<br/>')}</td>
+                                    <td>{formatSpeakers(event.speaker)}</td>
                                 </tr>
                             ))}
                         </tbody>
