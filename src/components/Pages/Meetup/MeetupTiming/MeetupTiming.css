@@ -239,6 +239,15 @@ table {
 
 /* MeetupTiming.css */
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -250,7 +259,13 @@ table {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: fadeIn 0.3s forwards;
+    animation: fadeIn 0.3s forwards; /* Анимация fadeIn для отображения */
+}
+
+.modal-overlay.fadeOut {
+    animation-name: fadeOut; /* Заменяем на анимацию fadeOut для скрытия */
+    animation-duration: 0.3s; /* Длительность анимации */
+    animation-fill-mode: forwards; /* Задерживаем последний кадр анимации */
 }
 
 .modal-content {
@@ -276,6 +291,16 @@ table {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.modal-overlay.active {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interactions */
+  }
+  
+  .modal-content.active {
+    opacity: 1;
+    transform: translateY(0); /* Slide down into view */
+  }
 
 @keyframes fadeIn {
     from {

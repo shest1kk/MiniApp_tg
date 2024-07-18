@@ -238,19 +238,25 @@ const MeetupTiming = () => {
   };
 
   const openModal = (speakerId) => {
-    // Find the speaker in speakersData by id
     if (speakersData.hasOwnProperty(speakerId)) {
       setModalData(speakersData[speakerId]);
     } else {
-      // Handle case where speaker with given id is not found
       console.error(`Speaker with id ${speakerId} not found in speakersData`);
     }
   };
 
   const closeModal = () => {
-    setModalData(null);
-  };
+    // Add a delay to ensure fadeOut animation completes before resetting modalData
+    setTimeout(() => {
+      setModalData(null);
+    }, 300); // Match animation duration in milliseconds
 
+    // Add fadeOut class to initiate fadeOut animation
+    const modalOverlay = document.querySelector(".modal-overlay");
+    if (modalOverlay) {
+      modalOverlay.classList.add("fadeOut");
+    }
+  };
   const formatSpeakers = (speakers) => {
     return speakers.map((speaker, index) => (
       <React.Fragment key={index}>
