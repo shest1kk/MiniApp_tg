@@ -525,14 +525,15 @@ const MeetupTiming = () => {
   const openModal = (speakerId) => {
     if (speakersData.hasOwnProperty(speakerId)) {
       setModalData(speakersData[speakerId]);
-      setShowBackButton(false); // Hide "Back" button when modal is opened
+      setShowBackButton(false);
+      setShowScrollToTop(false); // Hide "Back" button when modal is opened
     } else {
       console.error(`Speaker with id ${speakerId} not found in speakersData`);
     }
   };
 
   const closeModal = () => {
-    
+    setShowScrollToTop(true)
     // Add a delay to ensure fadeOut animation completes before resetting modalData
     setTimeout(() => {
       setModalData(null);
