@@ -16,8 +16,8 @@
         '/assets/FaqAbout_frame.svg',
         '/assets/living.svg',
         '/assets/test.svg',
-        '/testimfonts.svg'
-
+        '/testimfonts.svg',
+        '/assets/1.png'
         // Добавьте остальные URL-адреса изображений
     ];
 
