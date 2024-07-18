@@ -299,6 +299,9 @@ table {
 
 .modal-text {
     width: 80vw;
+    line-height: 1.5;
+    text-align: center;
+    text-justify: distribute
     
 }
 
