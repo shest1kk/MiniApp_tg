@@ -19,7 +19,7 @@ const Meetup = () => {
             </div>
         <div className={'Meetup_categories'}>
             <Link to='timing'>
-            <Button onClick={handleClick} className={'primary-button'}>AGENDA</Button>
+            <Button className={'primary-button'}>AGENDA</Button>
             </Link>
             {/* <Link to='speakers'> */}
             {/* <Button onClick={handleClick} className={'primary-button'}>Спикеры</Button> */}

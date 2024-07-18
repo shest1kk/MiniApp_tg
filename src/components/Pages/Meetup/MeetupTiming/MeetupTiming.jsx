@@ -5,53 +5,55 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const MeetupTiming = () => {
-  const [currentDay, setCurrentDay] = useState(1);
-  const [modalData, setModalData] = useState(null);
-  const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const bottomSpacerRef = useRef(null);
-  const [isSticky, setIsSticky] = useState(true);
-  const [showBackButton, setShowBackButton] = useState(true); // Состояние для видимости кнопки "Назад"
-
-  const handleScroll = () => {
-    const rows = document.querySelectorAll('tbody tr');
-    const seventhRow = rows[1];
-
-    if (seventhRow) {
-        const seventhRowTop = seventhRow.offsetTop;
-        const windowHeight = window.innerHeight;
-        const scrolled = window.scrollY;
-
-        if (scrolled > seventhRowTop) {
-            setShowScrollToTop(true);
-        } else {
-            setShowScrollToTop(false);
-        }
-    }
-
-    const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (bottomSpacerTop <= windowHeight) {
-        setIsSticky(false);
-    } else {
-        setIsSticky(true);
-    }
-};
-
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
-
-useEffect(() => {
-    alert('Чтобы узнать подробнее про спикеров - просто нажмите на них :)');
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
+    const [currentDay, setCurrentDay] = useState(1);
+    const [modalData, setModalData] = useState(null);
+    const [showScrollToTop, setShowScrollToTop] = useState(false);
+    const bottomSpacerRef = useRef(null);
+    const [isSticky, setIsSticky] = useState(true);
+    const [showBackButton, setShowBackButton] = useState(true); // Button visibility state
+    const [isModalOpen, setIsModalOpen] = useState(false); // New state for modal visibility
+  
+    const handleScroll = () => {
+      const rows = document.querySelectorAll('tbody tr');
+      const seventhRow = rows[1];
+  
+      if (seventhRow) {
+          const seventhRowTop = seventhRow.offsetTop;
+          const windowHeight = window.innerHeight;
+          const scrolled = window.scrollY;
+  
+          if (scrolled > seventhRowTop) {
+              setShowScrollToTop(true);
+          } else {
+              setShowScrollToTop(false);
+          }
+      }
+  
+      const bottomSpacerTop = bottomSpacerRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+  
+      if (bottomSpacerTop <= windowHeight) {
+          setIsSticky(false);
+      } else {
+          setIsSticky(true);
+      }
     };
-}, []);
+  
+    const scrollToTop = () => {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+    };
+  
+
+    useEffect(() => {
+        alert('Чтобы узнать подробнее про спикеров - просто нажмите на них :)');
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
 
   const timingDataDay1 = [
     {
@@ -523,15 +525,18 @@ useEffect(() => {
   const openModal = (speakerId) => {
     if (speakersData.hasOwnProperty(speakerId)) {
       setModalData(speakersData[speakerId]);
+      setShowBackButton(false); // Hide "Back" button when modal is opened
     } else {
       console.error(`Speaker with id ${speakerId} not found in speakersData`);
     }
   };
 
   const closeModal = () => {
+    
     // Add a delay to ensure fadeOut animation completes before resetting modalData
     setTimeout(() => {
       setModalData(null);
+      setShowBackButton(true); // Show "Back" button when modal is closed
     }, 700); // Match animation duration in milliseconds
 
     // Add fadeOut class to initiate fadeOut animation
