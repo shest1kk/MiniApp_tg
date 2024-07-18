@@ -533,7 +533,7 @@ const MeetupTiming = () => {
   };
 
   const closeModal = () => {
-    setShowScrollToTop(true)
+
     // Add a delay to ensure fadeOut animation completes before resetting modalData
     setTimeout(() => {
       setModalData(null);
