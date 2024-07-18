@@ -41,7 +41,15 @@
     width: 100vw;
 }
 
-.FaqLiving_text th, td {
+.FaqLiving_text th {
+    border: 1px double #000;
+            text-align: center; /* Горизонтальное центрирование */
+            vertical-align: middle; /* Вертикальное центрирование */
+            height: 50px;
+            padding: 20px;
+}
+
+.FaqLivint_text td {
     border: 1px double #000;
             text-align: center; /* Горизонтальное центрирование */
             vertical-align: middle; /* Вертикальное центрирование */
