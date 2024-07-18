@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const MeetupTiming = () => {
-    alert('Чтобы узнать подробнее про спикеров - просто нажмите на них :)');
   const [currentDay, setCurrentDay] = useState(1);
   const [modalData, setModalData] = useState(null);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -47,6 +46,7 @@ const scrollToTop = () => {
 };
 
 useEffect(() => {
+    alert('Чтобы узнать подробнее про спикеров - просто нажмите на них :)');
     window.addEventListener('scroll', handleScroll);
     return () => {
         window.removeEventListener('scroll', handleScroll);
