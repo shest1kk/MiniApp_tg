@@ -24,9 +24,13 @@ const FAQ = () => {
             <Link to='living'>
             <Button className={'primary-button'}>Проживание</Button>
             </Link>
+            {/* <Link to='activnosti'> */}
+            <Button onClick={handleClick} className={'primary-button'}>Активности</Button>
+            {/* </Link> */}
             {/* <Link to='map'> */}
             <Button onClick={handleClick} className={'primary-button'}>Территория отеля</Button>
             {/* </Link> */}
+
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

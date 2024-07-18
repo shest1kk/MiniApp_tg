@@ -5,23 +5,27 @@ import { Link } from "react-router-dom";
 
 const FaqMap = () => {
     return (
-        <div className={'FaqMap_wrapper'}>
-        <div className={'FaqMap_image'}>
-        <img className={'FaqMap_image_img'}
-            src='/assets/6.jpg'
-            alt="123"
-                />
-        </div>
-        <div className={'FaqMap_text'}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Dignissimos cumque dolorum totam a enim libero? Deserunt dolorum modi, eius quos atque facilis repellendus. 
-            Accusantium libero perspiciatis voluptate fugiat soluta sint tempora eos.
-        </div>
-            <div className={'FaqMap-button'}>
-            <Link to='/faq'>
-            <Button className={'primary-button'}>Назад</Button>
-            </Link>
-            
-        </div>
+        <div className={'FaqLiving_wrapper'}>
+            <div className="FaqLiving-pdf-container">
+                <div className="FaqLiving-image">
+                    <img src="/assets/hotel.jpg" alt="123"></img>
+                </div>
+            </div>
+            {/* <div className={'FaqLiving_image'}>
+                <div className={"FaqLiving_headerText"}>
+                    <img className={'FaqLiving_headerText_img'} 
+                         src='/assets/living.svg'
+                         alt='123'/>
+                </div>
+                <img className={'FaqLiving_image_img'}
+                     src='/assets/logo.svg'
+                     alt="123"/>
+            </div> */}
+            <div className={'FaqLiving_text'}>
+                        <Link to='/faq'>
+                            <Button className={'primary-button'}>Назад</Button>
+                        </Link>
+            </div>
         </div>
     );
 };

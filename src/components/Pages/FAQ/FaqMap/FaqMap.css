@@ -25,3 +25,9 @@
     font-style: normal;
     font-size: 18px;
 }
+
+.FaqLiving_pdf {
+    height: 100vh; /* Задайте желаемую высоту для PDF области */
+    overflow: auto;
+    width: 100vw;
+}

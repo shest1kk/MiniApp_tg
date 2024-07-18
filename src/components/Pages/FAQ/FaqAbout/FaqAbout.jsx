@@ -26,9 +26,11 @@ const FaqAbout = () => {
                     <span className={'details'}>с 8:00 - 10:00</span>
                     <li>обед</li>
                     <span className={'details'}>с 13:00 - 15:00</span>
+                    <li>ужин 22.07</li>
+                    <span className={'details'}>с 18:00 - 21:00</span>
                 </ul>
                 </div>
-                <div className="FaqAbout_text_Gym">
+                {/* <div className="FaqAbout_text_Gym">
                 🏋 Тренажерный зал<br />
                 <span className={'details'}>круглосуточно</span>
                 </div>
@@ -40,7 +42,7 @@ const FaqAbout = () => {
                     <li>Настольный теннис</li>
                     <li>Пляжный волейбол</li>
                 </ul>
-            </div>
+            </div> */}
             <div className="FaqAbout_text_show">
             🎭 Анимационные и шоу-программы
             </div>
