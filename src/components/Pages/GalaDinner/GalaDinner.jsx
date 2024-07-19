@@ -6,6 +6,12 @@ const GalaDinner = () => {
     const handleClick = () => {
         alert('Скоро будет');
     };
+    const whereClick = () => {
+        alert('Речной павильон (на карте номер 50)');
+    };
+    const timingClick = () => {
+        alert('Встреча гостей с 19:00\nСтарт гала-ужина в 19:30');
+    };
     return (
         <div className={'GalaDinner_wrapper'}>
             <div className={'GalaDinner_image'}>
@@ -22,11 +28,11 @@ const GalaDinner = () => {
             <Button className={'primary-button'}>Дресс-код</Button>
             </Link>
             {/* <Link to='timing'> */}
-            <Button onClick={handleClick}className={'primary-button'}>Тайминги</Button>
+            <Button onClick={timingClick}className={'primary-button'}>Тайминги</Button>
             {/* </Link> */}
-            {/* <Link to='where'> */}
-            <Button onClick={handleClick} className={'primary-button'}>Где находится</Button>
-            {/* </Link> */}
+            <Link to='/gala/map'>
+            <Button onClick={whereClick} className={'primary-button'}>Где находится</Button>
+            </Link>
             <Link to='/sections'>
             <Button className={'primary-button'}>Назад</Button>
             </Link>

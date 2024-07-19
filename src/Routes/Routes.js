@@ -7,6 +7,7 @@ import FaqAbout from '../components/Pages/FAQ/FaqAbout/FaqAbout';
 import FaqMap from '../components/Pages/FAQ/FaqMap/FaqMap';
 import FaqLiving from '../components/Pages/FAQ/FaqLiving/FaqLiving';
 import FaqActivnosti from '../components/Pages/FAQ/FaqActivnosti/FaqActivnosti';
+import FaqMapForGala from '../components/Pages/FAQ/FaqMapForGala/FaqMapForGala';
 import GalaDinner from '../components/Pages/GalaDinner/GalaDinner';
 import GalaDinnerConception from '../components/Pages/GalaDinner/GalaDinnerConception/GalaDinnerConception';
 import GalaDinnerDresscode from '../components/Pages/GalaDinner/GalaDinnerDresscode/GalaDinnerDresscode';
@@ -28,6 +29,7 @@ const AppRoutes = () => {
           <Route path="/faq" element={<FAQWithAnimation />} />
           <Route path="/faq/about" element={<FaqAbout/>} />
           <Route path="/faq/map" element={<FaqMap/>} />
+          <Route path="/gala/map" element={<FaqMapForGala />} />
           <Route path="/faq/activnosti" element={<FaqActivnosti />} />
           <Route path="/faq/living" element={<FaqLiving/>} />
           <Route path="/galadinner" element={<GalaDinnerWithAnimation />} />

@@ -28,7 +28,8 @@
         '/assets/living.svg',
         '/assets/test.svg',
         '/testimfonts.svg',
-        '/assets/1.png'
+        '/assets/1.png',
+        '/assets/hotel.jpg',
         // Добавьте остальные URL-адреса изображений
     ];
 
