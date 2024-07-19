@@ -1,9 +1,7 @@
 .FaqMap_wrapper {
     display: flex;
-
-    align-content: center;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     background-color: #EBEBE1;
 }
 
@@ -39,6 +37,7 @@
     font-size: 18px;
     background-color: #EBEBE1;
     width: 100vw;
+    margin-top: 20px;
 }
 
 .FaqMap_text th {
@@ -162,18 +161,22 @@ tbody tr {
 }
 
 .FaqMap-image img {
-    width: 100vw;
+    width: 95vw;
+    border-radius: 25px;
+
 }
 
 .FaqMap-image {
     width: 100vw;
     display: flex;
-    height: 100vh;
-    align-content: center;
-    align-items: center;
+    /* height: 100vh; */
+    /* align-content: center; */
+    justify-content: center;
+
 }
 
 .FaqMap-pdf-container {
-    width: 100vw;
-    height: 100vh;
+    margin-top: 20px;
+
+    /* height: 100vh; */
 }
