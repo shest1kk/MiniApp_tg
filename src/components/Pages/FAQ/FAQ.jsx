@@ -28,7 +28,7 @@ const FAQ = () => {
             <Button className={'primary-button'}>Активности</Button>
             </Link>
             <Link to='map'>
-            <Button onClick={handleClick} className={'primary-button'}>Территория отеля</Button>
+            <Button className={'primary-button'}>Территория отеля</Button>
             </Link>
 
             <Link to='/sections'>
