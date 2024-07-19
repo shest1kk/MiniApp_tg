@@ -5,23 +5,23 @@ import { Link } from "react-router-dom";
 
 const FaqMap = () => {
     return (
-        <div className={'FaqLiving_wrapper'}>
-            <div className="FaqLiving-pdf-container">
-                <div className="FaqLiving-image">
+        <div className={'FaqMap_wrapper'}>
+            <div className="FaqMap-pdf-container">
+                <div className="FaqMap-image">
                     <img src="/assets/hotel.jpg" alt="123"></img>
                 </div>
             </div>
-            {/* <div className={'FaqLiving_image'}>
-                <div className={"FaqLiving_headerText"}>
-                    <img className={'FaqLiving_headerText_img'} 
+            {/* <div className={'FaqMap_image'}>
+                <div className={"FaqMap_headerText"}>
+                    <img className={'FaqMap_headerText_img'} 
                          src='/assets/living.svg'
                          alt='123'/>
                 </div>
-                <img className={'FaqLiving_image_img'}
+                <img className={'FaqMap_image_img'}
                      src='/assets/logo.svg'
                      alt="123"/>
             </div> */}
-            <div className={'FaqLiving_text'}>
+            <div className={'FaqMap_text'}>
                         <Link to='/faq'>
                             <Button className={'primary-button'}>Назад</Button>
                         </Link>
