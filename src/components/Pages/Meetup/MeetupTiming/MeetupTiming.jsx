@@ -262,7 +262,7 @@ const MeetupTiming = () => {
       {
         id: 25,
         time: "15:00",
-        topic: "\nХотели шоу? Будет шоу!!!!\n\n<hr>\nВыступление команды QA\n\n",
+        topic: "\nКак закалялся QA.\n\n",
         speakers: [
             { id: 130, name: "\nЕвдокимов Илья\n\n" },
             { id: 131, name: "\nВишняков Антон\n\n" },
