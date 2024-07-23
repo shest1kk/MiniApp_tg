@@ -30,6 +30,9 @@ const GalaDinner = () => {
             {/* <Link to='timing'> */}
             <Button onClick={timingClick}className={'primary-button'}>Тайминги</Button>
             {/* </Link> */}
+            <Link to='/gala/sit'>
+            <Button className={'primary-button'}>Рассадка</Button>
+            </Link>
             <Link to='/gala/map'>
             <Button onClick={whereClick} className={'primary-button'}>Где находится</Button>
             </Link>

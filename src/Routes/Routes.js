@@ -12,6 +12,7 @@ import GalaDinner from '../components/Pages/GalaDinner/GalaDinner';
 import GalaDinnerConception from '../components/Pages/GalaDinner/GalaDinnerConception/GalaDinnerConception';
 import GalaDinnerDresscode from '../components/Pages/GalaDinner/GalaDinnerDresscode/GalaDinnerDresscode';
 import GalaDinnerTiming from '../components/Pages/GalaDinner/GalaDinnerTiming/GalaDinnerTiming';
+import GalaDinnerSit from '../components/Pages/GalaDinner/GalaDinnerSit/GalaDinnerSit';
 import Meetup from '../components/Pages/Meetup/Meetup';
 import MeetupConception from '../components/Pages/Meetup/MeetupConception/MeetupConception';
 import MeetupDiscussion from '../components/Pages/Meetup/MeetupDiscussion/MeetupDiscussion';
@@ -36,6 +37,7 @@ const AppRoutes = () => {
           <Route path="/galadinner/conception" element={<GalaDinnerConceptionWithAnimation />} />
           <Route path="/galadinner/dresscode" element={<GalaDinnerDresscode/>} />
           <Route path="/galadinner/timing" element={<GalaDinnerTimingWithAnimation />} />
+          <Route path="/gala/sit" element={<GalaDinnerSit />} />
           <Route path="/meetup" element={<MeetupWithAnimation />} />
           <Route path="/meetup/conception" element={<MeetupConceptionWithAnimation />} />
           <Route path="/meetup/discussion" element={<MeetupDiscussionWithAnimation />} />
