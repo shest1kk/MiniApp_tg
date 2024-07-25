@@ -22,7 +22,7 @@ const Feedback = () => {
         <a href="https://forms.yandex.ru/cloud/66754735eb61465b7d472f3f/">
           <Button className={'primary-button'}>Оставить отзыв</Button>
         </a>
-        <Link to='/sections'>
+        <Link to='/'>
           <Button className={'primary-button'}>Назад</Button>
         </Link>
       </div>

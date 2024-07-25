@@ -51,7 +51,8 @@ const StartPage = () => {
             </div>
             <div className="StartPage_text_wrapper">
                 <div className="StartPage_username">
-                    <b>Привет,<br />{user?.first_name}!</b>
+                    <b>Привет,<br />{user?.first_name}!<br /></b>
+                    Спасибо, что были с нами!
                 </div>
                 <div className="StartPage_description">
                     {/* Здесь ты можешь узнать подробную информацию о мероприятии SSM2024 */}
@@ -59,9 +60,9 @@ const StartPage = () => {
                 </div>
                 </div>
     
-                <Link to="/sections">
+                <Link to="/feedback">
                     <Button className={'primary-button'}>
-                        Перейти к разделам
+                        Обратная связь
                     </Button>
                 </Link>
             </div>
