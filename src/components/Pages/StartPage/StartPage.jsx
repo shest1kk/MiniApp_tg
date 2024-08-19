@@ -60,7 +60,7 @@ const StartPage = () => {
                 </div>
                 </div>
     
-                <Link to="/feedback">
+                <Link to="/sections">
                     <Button className={'primary-button'}>
                         Обратная связь
                     </Button>
